@@ -1,0 +1,25 @@
+.navLinks {
+    /* display: "flex"; */
+    /* align-items: "center"; */
+    /* justify-content: "space-between"; */
+    /* width: "50%"; */
+    list-style: none;
+}
+
+.navStyles {
+    background-color: var(--primary-color);
+    top: 0;
+    /* display: "flex";
+    position: "fixed";
+    align-items: "center";
+    justify-content: "space-between";
+    height: "6rem";
+    padding: "0 2rem";
+    width: "calc(100vw - 4rem)";
+    left: "0"; */
+}
+
+.logo {
+    height: 6rem;
+    width: auto;
+}

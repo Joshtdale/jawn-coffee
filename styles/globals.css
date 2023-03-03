@@ -3,3 +3,8 @@
   --secondary-color: white;
   --third-color: black;
 }
+
+.homeCard {
+  height: 100vh;
+}
+
