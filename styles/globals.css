@@ -4,6 +4,10 @@
   --third-color: black;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .homeCard {
   height: 100vh;
 }

@@ -1,8 +1,8 @@
 import React from 'react'
 
-function HomeCard() {
+function HomeCard(props) {
   return (
-    <div className='homeCard'>Home</div>
+    <div id={props.id} className='homeCard'>{props.id}</div>
   )
 }
 

@@ -17,10 +17,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <HomeCard/>
-        <HomeCard/>
-        <HomeCard/>
-        <HomeCard/>
+        <HomeCard id={'home'}/>
+        <HomeCard id={'about'}/>
+        <HomeCard id={'coffee'}/>
+        <HomeCard id={'booking'}/>
 
       </main>
     </>

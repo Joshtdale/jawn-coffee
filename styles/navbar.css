@@ -6,6 +6,18 @@
     list-style: none;
 }
 
+@media screen and (max-width: 480px) {
+    .navLinks {
+        visibility: hidden;
+    }
+}
+
+@media screen and (min-width: 480px) {
+    .hamburger {
+        visibility: hidden;
+    }
+}
+
 .navStyles {
     background-color: var(--primary-color);
     top: 0;
@@ -18,6 +30,21 @@
     width: "calc(100vw - 4rem)";
     left: "0"; */
 }
+
+/* .nav-item {
+    text-decoration: none;
+} */
+
+a {
+    color: var(--third-color);
+    text-decoration: none;
+}
+/* 
+a:hover {
+    color:#00A0C6; 
+    text-decoration:none; 
+    cursor:pointer;  
+} */
 
 .logo {
     height: 6rem;

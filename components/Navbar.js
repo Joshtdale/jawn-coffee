@@ -76,11 +76,12 @@ export default function Navbar() {
             >
                 {/* {linkList.map((item, i) => ( */}
                     {/* <li key={i}>Link</li> */}
-                    <li>About</li>
-                    <li>Coffee</li>
-                    <li>Booking</li>
+                    <li><a className="nav-item" href="#about">About</a></li>
+                    <li><a className="nav-item" href="#coffee">Coffee</a></li>
+                    <li><a className="nav-item" href="#booking">Booking</a></li>
                 {/* // ))} */}
             </ul>
+            <button className="hamburger">ham</button>
         </motion.nav>
     );
 }
