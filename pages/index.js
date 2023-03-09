@@ -6,11 +6,13 @@ import HomeCard from '@/components/Home'
 import About from '@/components/About'
 import Coffee from '@/components/Coffee'
 import Booking from '@/components/Booking'
+// import IsOpen from '@/components/Navbar'
 // import '@/styles/navbar.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  // console.log(isOpen.Open)
   return (
     <>
       <Head>
