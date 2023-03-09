@@ -1,7 +1,23 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import { motion, useViewportScroll } from "framer-motion";
 import Image from "next/image";
 import logo from '../styles/images/logo.jpeg'
+import { MenuButton } from "./MenuButton";
+
+
+
+const canvasStyle = {
+    display: "flex",
+    width: "100vw",
+    height: "100vh",
+    alignItems: "center",
+    justifyContent: "center"
+};
+
+const menuButtonStyle = {
+    marginLeft: "2rem"
+};
 
 /** this is to FPO generate 5 links for the nav **/
 const linkList = [{}, {}, {}, {}, {}];
@@ -13,7 +29,7 @@ const navStyles = {
     justifyContent: "space-between",
     height: "6rem",
     padding: "0 2rem",
-    width: "calc(100vw - 4rem)",
+    width: "100vw",
     left: "0"
 };
 
@@ -28,7 +44,7 @@ export default function Navbar() {
     /** this hook gets the scroll y-axis **/
     const { scrollY } = useViewportScroll();
     /** this hook manages state **/
-    const [hidden, setHidden] = React.useState(false);
+    const [hidden, setHidden] = useState(false);
 
     /** this onUpdate function will be called in the `scrollY.onChange` callback **/
     function update() {
@@ -39,8 +55,11 @@ export default function Navbar() {
         }
     }
 
+    const [isOpen, setOpen] = useState(false);
+    console.log(isOpen)
+
     /** update the onChange callback to call for `update()` **/
-    React.useEffect(() => {
+    useEffect(() => {
         return scrollY.onChange(() => update());
     });
 
@@ -70,18 +89,25 @@ export default function Navbar() {
                 width='auto'
                 height='auto'
             />
-            <ul 
-            style={navLinksWrapper}
-            className='navLinks'
+            {isOpen && <ul
+                style={navLinksWrapper}
+                className='navLinks'
             >
                 {/* {linkList.map((item, i) => ( */}
-                    {/* <li key={i}>Link</li> */}
-                    <li><a className="nav-item" href="#about">About</a></li>
-                    <li><a className="nav-item" href="#coffee">Coffee</a></li>
-                    <li><a className="nav-item" href="#booking">Booking</a></li>
+                {/* <li key={i}>Link</li> */}
+                <li><a className="nav-item" href="#about">About</a></li>
+                <li><a className="nav-item" href="#coffee">Coffee</a></li>
+                <li><a className="nav-item" href="#booking">Booking</a></li>
                 {/* // ))} */}
-            </ul>
-            <button className="hamburger">ham</button>
+            </ul>}
+            {/* <button className="hamburger">ham</button> */}
+            <div style={canvasStyle}>
+                <MenuButton
+                    isOpen={isOpen}
+                    onClick={() => setOpen(!isOpen)}
+                    style={menuButtonStyle}
+                />
+                </div>
         </motion.nav>
     );
 }
