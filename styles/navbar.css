@@ -53,12 +53,12 @@ a {
     text-decoration: none;
 }
 
-/* 
+
 a:hover {
-    color:#00A0C6; 
+    color: var(--secondary-color) !important; 
     text-decoration:none; 
     cursor:pointer;  
-} */
+}
 
 .logo {
     height: 6rem;

@@ -5,7 +5,7 @@ const MenuButton = ({
     isOpen = false,
     width = 24,
     height = 24,
-    strokeWidth = 1,
+    strokeWidth = 1.5,
     color = "#fff",
     transition = null,
     lineProps = null,
@@ -53,6 +53,7 @@ const MenuButton = ({
     const unitWidth = (unitHeight * width) / height;
 
     return (
+        <div className="hamburgerContainer">
         <motion.svg
             viewBox={`0 0 ${unitWidth} ${unitHeight}`}
             overflow="visible"
@@ -86,6 +87,7 @@ const MenuButton = ({
                 {...lineProps}
             />
         </motion.svg>
+        </div>
     );
 };
 
