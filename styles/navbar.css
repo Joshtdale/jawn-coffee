@@ -23,9 +23,13 @@
     }
 }
 
+.navStyles, .transparentNav {
+    top: 0;
+}
+
 .navStyles {
     background-color: var(--primary-color);
-    top: 0;
+
     /* display: "flex";
     position: "fixed";
     align-items: "center";
@@ -36,6 +40,9 @@
     left: "0"; */
 }
 
+.transparentNav{
+}
+
 /* .nav-item {
     text-decoration: none;
 } */
@@ -44,6 +51,7 @@ a {
     color: var(--third-color);
     text-decoration: none;
 }
+
 /* 
 a:hover {
     color:#00A0C6; 
@@ -55,3 +63,4 @@ a:hover {
     height: 6rem;
     width: auto;
 }
+

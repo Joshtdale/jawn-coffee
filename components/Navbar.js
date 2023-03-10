@@ -5,12 +5,12 @@ import Image from "next/image";
 import logo from '../styles/images/logo.jpeg'
 import { MenuButton } from "./MenuButton";
 
-
+// for nav menu
 const links = [
-    { name: "Home", to: "#", id: 1 },
-    { name: "About", to: "#", id: 2 },
-    { name: "Blog", to: "#", id: 3 },
-    { name: "Contact", to: "#", id: 4 }
+    { name: "About", to: "#about", id: 1 },
+    { name: "Coffee", to: "#coffee", id: 2 },
+    { name: "Booking", to: "#booking", id: 3 },
+    // { name: "Contact", to: "#", id: 4 }
 ];
 
 const itemVariants = {
@@ -54,7 +54,7 @@ const navStyles = {
     position: "fixed",
     alignItems: "center",
     justifyContent: "space-between",
-    height: "6rem",
+    height: "7rem",
     padding: "0 2rem",
     width: "100vw",
     left: "0"
@@ -67,7 +67,31 @@ const navLinksWrapper = {
     width: "50%"
 };
 
+let navStyleVariable = 'transparentNav'
+
 export default function Navbar() {
+    const [clientWindowHeight, setClientWindowHeight] = useState("");
+
+
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    });
+
+    const handleScroll = () => {
+        setClientWindowHeight(window.scrollY);
+    };
+
+    useEffect(() => {
+        // console.log(clientWindowHeight)
+        if (clientWindowHeight > 0) {
+            // console.log('yuppp')
+            navStyleVariable = 'navStyles'
+        }
+        if (clientWindowHeight < 5) {
+            navStyleVariable = 'transparentNav'
+        }
+    }, [clientWindowHeight]);
     /** this hook gets the scroll y-axis **/
     const { scrollY } = useScroll();
     /** this hook manages state **/
@@ -111,7 +135,7 @@ export default function Navbar() {
                 transition={{ ease: [0.1, 0.25, 0.3, 1], duration: 0.6 }}
                 /** basic nav styles **/
                 style={navStyles}
-                className='navStyles'
+                className={navStyleVariable}
             >
                 <Image
                     src={logo}
@@ -119,6 +143,7 @@ export default function Navbar() {
                     alt="logo"
                     width='auto'
                     height='auto'
+                    priority='true'
                 />
                 {/* {isOpen && <ul
                 style={navLinksWrapper}
@@ -132,6 +157,7 @@ export default function Navbar() {
                 <div style={canvasStyle}>
                     <MenuButton
                         isOpen={isOpen}
+                        whileHover={{ scale: 1.1 }}
                         onClick={() => setOpen(!isOpen)}
                         style={menuButtonStyle}
                     />
@@ -156,12 +182,14 @@ export default function Navbar() {
                             exit="closed"
                             variants={sideVariants}
                         >
+
                             {links.map(({ name, to, id }) => (
                                 <motion.a
                                     key={id}
                                     href={to}
                                     whileHover={{ scale: 1.1 }}
                                     variants={itemVariants}
+                                    onClick={() => setOpen(false)}
                                 >
                                     {name}
                                 </motion.a>

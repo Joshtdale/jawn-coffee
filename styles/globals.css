@@ -14,10 +14,14 @@ html {
   height: 100vh;
 }
 
+/* Aside/Menu */
+
 aside {
-  background-color: #c4a8ff;
+  position: fixed;
+  background-color: var(--primary-color);
+  margin-top: 7rem;
   width: 18.75rem;
-  height: 100vh;
+  height: 80vh;
 }
 
 .container {
