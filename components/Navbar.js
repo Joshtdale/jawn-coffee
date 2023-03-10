@@ -84,11 +84,11 @@ export default function Navbar() {
 
     useEffect(() => {
         // console.log(clientWindowHeight)
-        if (clientWindowHeight > 0) {
+        if (clientWindowHeight > 500) {
             // console.log('yuppp')
             navStyleVariable = 'navStyles'
         }
-        if (clientWindowHeight < 5) {
+        if (clientWindowHeight < 300) {
             navStyleVariable = 'transparentNav'
         }
     }, [clientWindowHeight]);
