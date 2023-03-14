@@ -137,6 +137,7 @@ export default function Navbar() {
                 style={navStyles}
                 className={navStyleVariable}
             >
+                <a href="#home">
                 <Image
                     src={logo}
                     className='logo'
@@ -145,6 +146,7 @@ export default function Navbar() {
                     height='auto'
                     priority='true'
                 />
+                </a>
                 {/* {isOpen && <ul
                 style={navLinksWrapper}
                 className='navLinks'
@@ -188,6 +190,7 @@ export default function Navbar() {
                                     key={id}
                                     href={to}
                                     whileHover={{ scale: 1.1 }}
+                                    whileTap={{ scale: 0.9 }}
                                     variants={itemVariants}
                                     onClick={() => setOpen(false)}
                                 >
@@ -198,9 +201,6 @@ export default function Navbar() {
                     </motion.aside>
                 )}
             </AnimatePresence>
-            {/* <div className="btn-container">
-                <button onClick={setOpen}>{open ? "Close" : "Open"}</button>
-            </div> */}
         </>
     );
 }
