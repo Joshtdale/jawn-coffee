@@ -1,0 +1,41 @@
+.homeCard {
+    height: 100vh;
+}
+
+/* .jumbotron {
+    background-image: url(./images/bg2.jpeg);
+    height: 100%;
+    width: 115%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: -100px;
+    margin-top: 5rem;
+} */
+
+.jumbotron {
+    background-image: url(./images/bg4.jpeg);
+    height: 100%;
+    width: 100%;
+    /* background-attachment: fixed; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* margin-top: 5rem; */
+}
+
+@media screen and (min-width: 1600px) {
+    .jumbotron {
+        height: 100%;
+        width: 100%;
+        background-position: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .jumbotron {
+        background-image: url(./images/vert4.jpg);
+        height: 98%;
+        width: 100%;
+        background-position: center;
+    }
+}
