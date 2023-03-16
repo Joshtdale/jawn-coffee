@@ -1,0 +1,7 @@
+.coffeePreview {
+    height: 50vh;
+}
+
+.coffeeSection {
+    background-color: var(--primary-color);
+}
