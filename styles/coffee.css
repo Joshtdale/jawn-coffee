@@ -5,3 +5,8 @@
 .coffeeSection {
     background-color: var(--primary-color);
 }
+
+.moreInfoBtn {
+    background-color: #FCD3D1;
+    border-radius: 5px;
+}
