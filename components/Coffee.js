@@ -19,6 +19,9 @@ function Coffee() {
                     Stuff about the coffee coming from proud hound Stuff about the coffee coming from proud hound 
                     Stuff about the coffee coming from proud hound Stuff about the coffee coming from proud hound 
                     Stuff about the coffee coming from proud hound Stuff about the coffee coming from proud hound </p>
+                    <a href="https://www.proudhoundcoffee.com/" target="_blank">
+                        <button className='moreInfoBtn'>More Info</button>
+                        </a>
             </div>
         </div>
     )
