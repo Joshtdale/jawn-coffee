@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 
 function Coffee() {
     return (
@@ -15,13 +16,23 @@ function Coffee() {
             </div>
             <div className="col-4">
                 <h1>Something about coffee</h1>
-                <p>Stuff about the coffee coming from proud hound Stuff about the coffee coming from proud hound 
+                <p>
                     Stuff about the coffee coming from proud hound Stuff about the coffee coming from proud hound 
                     Stuff about the coffee coming from proud hound Stuff about the coffee coming from proud hound 
-                    Stuff about the coffee coming from proud hound Stuff about the coffee coming from proud hound </p>
-                    <a href="https://www.proudhoundcoffee.com/" target="_blank">
-                        <button className='moreInfoBtn'>More Info</button>
-                        </a>
+                    Stuff about the coffee coming from proud hound Stuff about the coffee coming from proud hound 
+                    Stuff about the coffee coming from proud hound Stuff about the coffee coming from proud hound 
+                </p>
+                    
+                <a href="https://www.proudhoundcoffee.com/" target="_blank">
+                    <motion.button
+                        className='moreInfoBtn'
+                        whileHover={{scale: 1.1}}
+                        whileTap={{scale: 0.9}}
+                    >
+                    More Info
+                    </motion.button>
+                </a>
+
             </div>
         </div>
     )

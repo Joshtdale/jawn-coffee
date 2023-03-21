@@ -6,6 +6,7 @@ import HomeCard from '@/components/Home'
 import About from '@/components/About'
 import Coffee from '@/components/Coffee'
 import Booking from '@/components/Booking'
+import Merch from '@/components/Merch'
 import { useState, useEffect, useRef } from 'react'
 import { useInView } from 'framer-motion'
 // import IsOpen from '@/components/Navbar'
@@ -57,7 +58,13 @@ export default function Home() {
           <Coffee />
         </Section>
         
+        <Section>
         <Booking />
+        </Section>
+
+        <Section>
+          <Merch />
+        </Section>
 
       </main>
     </>
