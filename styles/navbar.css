@@ -31,23 +31,11 @@
 .navStyles {
     background-color: var(--primary-color);
 
-    /* display: "flex";
-    position: "fixed";
-    align-items: "center";
-    justify-content: "space-between";
-    height: "6rem";
-    padding: "0 2rem";
-    width: "calc(100vw - 4rem)";
-    left: "0"; */
 }
 
-.transparentNav{
 
-}
 
-/* .nav-item {
-    text-decoration: none;
-} */
+
 
 a {
     color: var(--third-color);

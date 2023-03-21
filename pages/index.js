@@ -58,14 +58,15 @@ export default function Home() {
           <Coffee />
         </Section>
         
-        <Section>
-        <Booking />
-        </Section>
 
         <Section>
           <Merch />
         </Section>
 
+        <Section>
+        <Booking />
+        </Section>
+        
       </main>
     </>
   )

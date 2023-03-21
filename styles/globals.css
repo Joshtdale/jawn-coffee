@@ -1,6 +1,6 @@
 :root {
   --primary-color: #469DAF;
-  --secondary-color: white;
+  --secondary-color: #D6DCE0;
   --third-color: black;
 }
 
@@ -14,7 +14,7 @@ body {
 
 
 
-#coffee, #about, #booking {
+#coffee, #booking {
   height: 100vh;
 }
 
