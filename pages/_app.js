@@ -4,6 +4,7 @@ import '@/styles/Home.css'
 import '@/styles/coffee.css'
 import '@/styles/Merch.css'
 import '@/styles/About.css'
+import '@/styles/Booking.css'
 import Layout from '@/components/Layout'
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import 'bootstrap/dist/js/bootstrap.min.js';

@@ -10,12 +10,13 @@ html {
 
 body {
   overflow-x: hidden;
+  background-color: var(--secondary-color);
 }
 
 
 
-#coffee, #booking {
-  height: 100vh;
+#booking, #about, #coffee, #merch {
+    scroll-margin-top: 12vh;
 }
 
 /* Aside/Menu */

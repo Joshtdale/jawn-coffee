@@ -1,13 +1,20 @@
 .coffeePreview {
     height: auto;
-    width: 20vw;
+    width: 40vw;
 }
 
 .coffeeSection {
     background-color: var(--primary-color);
+    height: 88vh;
 }
 
 .moreInfoBtn {
     background-color: #FCD3D1;
     border-radius: 5px;
+}
+
+@media screen and (max-width: 950px) {
+    .coffeePreview {
+        width: 70vw;
+    }
 }
