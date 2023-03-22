@@ -9,7 +9,7 @@ function About() {
 
 
 <div className='row d-flex justify-content-center align-items-center aboutSection' id='about'>
-<div className="col-4">
+<div className="col-lg-4 col-sm-12">
                 <h1>Something about coffee</h1>
                 <p>
                     Stuff about the coffee coming from proud hound Stuff about the coffee coming from proud hound 
@@ -29,7 +29,7 @@ function About() {
                 </a> */}
 
             </div>
-            <div className='col-4 d-flex justify-content-center'>
+            <div className='col-lg-4 col-sm-12 d-flex justify-content-center'>
             <Image
                     src={JohnSteph}
                     className='aboutPic'

@@ -5,6 +5,12 @@
 }
 
 .aboutPic {
-    height: 80vh;
-    width: auto;
+    height: auto;
+    width: 35vw;
+}
+
+@media screen and (max-width: 450px) {
+    .aboutPic {
+        width: 90vw;
+    }
 }

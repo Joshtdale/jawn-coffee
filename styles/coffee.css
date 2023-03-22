@@ -1,5 +1,6 @@
 .coffeePreview {
-    height: 50vh;
+    height: auto;
+    width: 20vw;
 }
 
 .coffeeSection {
