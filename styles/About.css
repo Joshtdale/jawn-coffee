@@ -6,11 +6,12 @@
 
 .aboutPic {
     height: auto;
-    width: 35vw;
+    width: 30vw;
 }
 
 @media screen and (max-width: 450px) {
     .aboutPic {
-        width: 90vw;
+        width: 85vw;
+        margin: 5px;
     }
 }

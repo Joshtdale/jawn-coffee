@@ -14,9 +14,16 @@ import { useInView } from 'framer-motion'
 
 const inter = Inter({ subsets: ['latin'] })
 
-function Section({ children }) {
+
+
+
+
+function Section({ children }) { // fades in element when first in view
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
+
+  // console.log(children.type.name)
+
 
   return (
     <section ref={ref}>
@@ -36,38 +43,64 @@ function Section({ children }) {
 
 export default function Home() {
 
+    const [windowSize, setWindowSize] = useState({
+      width: undefined,
+      height: undefined,
+    });
 
-  return (
-    <>
-      <Head>
-        <title>JAWN Coffee</title>
-        <meta name="description" content="Your favorite mobile coffee business " />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <main>
-        <Section>
-          <HomeCard/>
-        </Section>
+    useEffect(() => {
+      // only execute all the code below in client side
+      // Handler to call on window resize
+      function handleResize() {
+        setWindowSize({
+          width: window.innerWidth
+        });
+      }
 
-        <Section>
-          <About/>
-        </Section>
+      // Add event listener
+      window.addEventListener("resize", handleResize);
 
-        <Section>
-          <Coffee />
-        </Section>
-        
+      // Call handler right away so state gets updated with initial window size
+      handleResize();
 
-        <Section>
-          <Merch />
-        </Section>
+      // Remove event listener on cleanup
+      return () => window.removeEventListener("resize", handleResize);
+    }, []); // Empty array ensures that effect is only run on mount
+    // console.log(windowSize.width)
 
-        <Section>
-        <Booking />
-        </Section>
-        
-      </main>
-    </>
-  )
-}
+
+
+    return (
+      <>
+        <Head>
+          <title>JAWN Coffee</title>
+          <meta name="description" content="Your favorite mobile coffee business " />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
+        <main>
+          <Section>
+            <HomeCard />
+          </Section>
+
+          <Section>
+            <About size={windowSize.width} />
+          </Section>
+
+          <Section>
+            <Coffee />
+          </Section>
+
+
+          <Section>
+            <Merch />
+          </Section>
+
+          <Section>
+            <Booking />
+          </Section>
+
+        </main>
+      </>
+    )
+  }
