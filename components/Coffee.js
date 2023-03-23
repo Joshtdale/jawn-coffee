@@ -6,7 +6,7 @@ import coffee from '../styles/images/coffee.jpeg'
 function Coffee() {
     return (
         <div className='row d-flex justify-content-center align-items-center coffeeSection' id='coffee'>
-            <div className='col-lg-5 col-sm-12 d-flex justify-content-center'>
+            <div className='col-lg-5 col-sm-12 d-flex justify-content-center align-items-center'>
                 <Image
                     // src='https://cdn.shopify.com/s/files/1/0277/2618/4517/collections/Webp.net-gifmaker-2_960x960.gif?v=1648328799'
                     src={coffee}
@@ -17,8 +17,8 @@ function Coffee() {
                 />
             </div>
             <div className="col-lg-5 col-sm-12">
-                <h1>Our coffee</h1>
-                <p>
+                <h1 className='coffeeHeader'>Our coffee</h1>
+                <p className='coffeeText'>
                 We are committed to serving you the highest-quality coffee blends available. 
                 We partner with renowned coffee roasters from around the United States who 
                 share our passion for excellence. Our trusted partners carefully select their coffees 

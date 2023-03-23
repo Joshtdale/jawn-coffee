@@ -5,12 +5,14 @@ import JohnSteph from '../styles/images/vert2.jpeg'
 function Text() {
     return (
         <div className="col-lg-4 col-sm-12">
-            <h1>Something about coffee</h1>
-            <p>
-                Stuff about the coffee coming from proud hound Stuff about the coffee coming from proud hound
-                Stuff about the coffee coming from proud hound Stuff about the coffee coming from proud hound
-                Stuff about the coffee coming from proud hound Stuff about the coffee coming from proud hound
-                Stuff about the coffee coming from proud hound Stuff about the coffee coming from proud hound
+            <h1 className='aboutHeader'>About us</h1>
+            <p className='aboutText'>
+            Welcome to JAWN Coffee, the mobile coffee cart business founded by John and Stephanie Cable  
+            in Lexington, KY. With nearly a decade of experience in the local coffee industry, we're 
+            passionate about crafting the perfect cup of coffee for your special event. From weddings 
+            to parties and more, we use only the finest ingredients and beans to ensure every drink is 
+            delicious. We pride ourselves on exceptional service and a warm, welcoming atmosphere. 
+            Contact us today to book us for your next event!
             </p>
 
             {/* <a href="https://www.proudhoundcoffee.com/" target="_blank">
