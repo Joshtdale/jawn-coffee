@@ -2,110 +2,99 @@ import React from 'react'
 import { useState } from 'react';
 import Head from "next/head";
 import axios from "axios";
+import { send } from 'emailjs-com';
 
-// function Booking() {
-//     return (
-//         <div className='bookingSection' id='booking'>
+function Booking() {
 
-//         </div>
-//     )
-// }
-
-// export default Booking
-
-
-const Booking = () => {
-    const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
+    const [toSend, setToSend] = useState({
+        from_name: '',
+        date: '',
+        time: '',
+        location: '',
+        message: '',
+        reply_to: '',
     });
 
-    const [status, setStatus] = useState("");
-
-    const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
+    const onSubmit = (e) => {
+        e.preventDefault();
+        send(
+            'service_mdnlqle',
+            'template_vqplc4i',
+            toSend,
+            'DD7WQ4aW4Zl66jFJ7'
+        )
+            .then((response) => {
+                console.log('SUCCESS!', response.status, response.text);
+            })
+            .catch((err) => {
+                console.log('FAILED...', err);
+            });
     };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        setStatus("sending");
-
-        try {
-            await axios.post("/api/contact", formData);
-            setStatus("success");
-            setFormData({
-                name: "",
-                email: "",
-                subject: "",
-                message: "",
-            });
-        } catch (error) {
-            console.error(error);
-            setStatus("error");
-        }
+    const handleChange = (e) => {
+        setToSend({ ...toSend, [e.target.name]: e.target.value });
     };
 
     return (
-        <>
-            <Head>
-                <title>Contact</title>
-            </Head>
-            <h1>Contact Us</h1>
-            {status === "success" ? (
-                <p>Thank you for your message! We will be in touch soon.</p>
-            ) : (
-                <form onSubmit={handleSubmit}>
-                    <label>
-                        Name:
-                        <input
-                            type="text"
-                            name="name"
-                            value={formData.name}
-                            onChange={handleChange}
-                            required
-                        />
-                    </label>
-                    <label>
-                        Email:
-                        <input
-                            type="email"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleChange}
-                            required
-                        />
-                    </label>
-                    <label>
-                        Subject:
-                        <input
-                            type="text"
-                            name="subject"
-                            value={formData.subject}
-                            onChange={handleChange}
-                            required
-                        />
-                    </label>
-                    <label>
-                        Message:
-                        <textarea
-                            name="message"
-                            value={formData.message}
-                            onChange={handleChange}
-                            required
-                        />
-                    </label>
-                    <button type="submit" disabled={status === "sending"}>
-                        {status === "sending" ? "Sending..." : "Send"}
-                    </button>
-                    {status === "error" && (
-                        <p>Oops! Something went wrong. Please try again later.</p>
-                    )}
-                </form>
-            )}
-        </>
-    );
-};
+        <div className='bookingSection' id='booking'>
+            <form onSubmit={onSubmit}>
+                <input
+                    type='text'
+                    name='from_name'
+                    placeholder='Your name'
+                    value={toSend.from_name}
+                    onChange={handleChange}
+                />
+                <input
+                    type='text'
+                    name='date'
+                    placeholder='Date'
+                    value={toSend.date}
+                    onChange={handleChange}
+                />
+                <input
+                    type='text'
+                    name='time'
+                    placeholder='Time'
+                    value={toSend.time}
+                    onChange={handleChange}
+                />
+                <input
+                    type='text'
+                    name='location'
+                    placeholder='Location of event'
+                    value={toSend.location}
+                    onChange={handleChange}
+                />
+                {/* <input
+                    type='text'
+                    name='to_name'
+                    placeholder='to name'
+                    value={toSend.to_name}
+                    onChange={handleChange}
+                /> */}
+                <input
+                    type='text'
+                    name='message'
+                    placeholder='Your message'
+                    value={toSend.message}
+                    onChange={handleChange}
+                />
+                <input
+                    type='text'
+                    name='reply_to'
+                    placeholder='Your email'
+                    value={toSend.reply_to}
+                    onChange={handleChange}
+                />
+                <button type='submit'>Submit</button>
+            </form>
 
-export default Booking;
+        </div>
+    )
+}
+
+export default Booking
+
+
+
