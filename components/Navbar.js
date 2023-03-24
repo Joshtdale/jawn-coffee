@@ -9,8 +9,8 @@ import { MenuButton } from "./MenuButton";
 const links = [
     { name: "About", to: "#about", id: 1 },
     { name: "Coffee", to: "#coffee", id: 2 },
-    { name: "Booking", to: "#booking", id: 3 },
-    { name: "Merch/Vintage", to: "#merch", id: 4 }
+    { name: "Merch/Vintage", to: "#merch", id: 3 },
+    { name: "Booking", to: "#booking", id: 4 }
 ];
 
 const itemVariants = {
@@ -137,7 +137,7 @@ export default function Navbar() {
     useEffect(() => { // listens for the nav to be open or closed
         if (isOpen) {
             setTimeout(// so give the nav time to be opened
-                        // other wise the event listener would be set
+                        // otherwise the event listener would be set
                         //instantly causing the nav to not open
                 WindowListener, 100)
         }
@@ -156,7 +156,10 @@ export default function Navbar() {
                 style={navStyles}
                 className={navStyleVariable}
             >
-                <a href="#home">
+                <motion.a href="#home"
+                whileHover={{scale: 1.1}}
+                whileTap={{scale: 0.9}}
+                >
                     <Image
                         src={logo}
                         className='logo'
@@ -165,7 +168,7 @@ export default function Navbar() {
                         height='auto'
                         priority='true'
                     />
-                </a>
+                </motion.a>
                 {/* {isOpen && <ul
                 style={navLinksWrapper}
                 className='navLinks'
