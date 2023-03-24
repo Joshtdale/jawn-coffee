@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Head from "next/head";
 import axios from "axios";
 import { send } from 'emailjs-com';
+import { toast } from 'react-hot-toast';
 
 function Booking() {
 
@@ -17,6 +18,22 @@ function Booking() {
 
     const onSubmit = (e) => {
         e.preventDefault();
+        if (toSend.from_name && 
+            toSend.date && 
+            toSend.time &&
+            toSend.message && 
+            toSend.reply_to.includes('@')
+            ){
+
+        setToSend({
+            from_name: '',
+            date: '',
+            time: '',
+            location: '',
+            message: '',
+            reply_to: ''
+        })
+            // toast.success('Message sent Successfully! \n We\'ll be in touch!')
         send(
             'service_mdnlqle',
             'template_vqplc4i',
@@ -24,11 +41,16 @@ function Booking() {
             'DD7WQ4aW4Zl66jFJ7'
         )
             .then((response) => {
-                console.log('SUCCESS!', response.status, response.text);
+                // console.log('SUCCESS!', response.status, response.text);
+                toast.success('Message sent Successfully! \n We\'ll be in touch!')
             })
             .catch((err) => {
-                console.log('FAILED...', err);
+                // console.log('FAILED...', err);
+                toast.error("Message failed to send. Please try again")
             });
+    } else {
+        toast.error("Please fill out all the required fields")
+    }
     };
 
     const handleChange = (e) => {
@@ -39,6 +61,7 @@ function Booking() {
         <div className='bookingSection' id='booking'>
             <form onSubmit={onSubmit}>
                 <input
+                    className='formInputs'
                     type='text'
                     name='from_name'
                     placeholder='Your name'
@@ -46,6 +69,7 @@ function Booking() {
                     onChange={handleChange}
                 />
                 <input
+                    className='formInputs'
                     type='text'
                     name='date'
                     placeholder='Date'
@@ -53,6 +77,7 @@ function Booking() {
                     onChange={handleChange}
                 />
                 <input
+                    className='formInputs'
                     type='text'
                     name='time'
                     placeholder='Time'
@@ -60,20 +85,15 @@ function Booking() {
                     onChange={handleChange}
                 />
                 <input
+                    className='formInputs'
                     type='text'
                     name='location'
                     placeholder='Location of event'
                     value={toSend.location}
                     onChange={handleChange}
                 />
-                {/* <input
-                    type='text'
-                    name='to_name'
-                    placeholder='to name'
-                    value={toSend.to_name}
-                    onChange={handleChange}
-                /> */}
                 <input
+                    className='formInputs'
                     type='text'
                     name='message'
                     placeholder='Your message'
@@ -81,13 +101,14 @@ function Booking() {
                     onChange={handleChange}
                 />
                 <input
+                    className='formInputs'
                     type='text'
                     name='reply_to'
                     placeholder='Your email'
                     value={toSend.reply_to}
                     onChange={handleChange}
                 />
-                <button type='submit'>Submit</button>
+                <button type='submit'>Send</button>
             </form>
 
         </div>

@@ -137,8 +137,8 @@ export default function Navbar() {
     useEffect(() => { // listens for the nav to be open or closed
         if (isOpen) {
             setTimeout(// so give the nav time to be opened
-                        // otherwise the event listener would be set
-                        //instantly causing the nav to not open
+                // otherwise the event listener would be set
+                //instantly causing the nav to not open
                 WindowListener, 100)
         }
     }), [isOpen || !isOpen];
@@ -157,8 +157,8 @@ export default function Navbar() {
                 className={navStyleVariable}
             >
                 <motion.a href="#home"
-                whileHover={{scale: 1.1}}
-                whileTap={{scale: 0.9}}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
                 >
                     <Image
                         src={logo}

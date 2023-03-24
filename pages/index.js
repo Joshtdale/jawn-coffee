@@ -9,6 +9,7 @@ import Booking from '@/components/Booking'
 import Merch from '@/components/Merch'
 import { useState, useEffect, useRef } from 'react'
 import { useInView } from 'framer-motion'
+import { Toaster } from 'react-hot-toast'
 // import IsOpen from '@/components/Navbar'
 // import '@/styles/navbar.css'
 
@@ -43,59 +44,60 @@ function Section({ children }) { // fades in element when first in view
 
 export default function Home() {
 
-    const [windowSize, setWindowSize] = useState({
-      width: undefined,
-      height: undefined,
-    });
+  const [windowSize, setWindowSize] = useState({
+    width: undefined,
+    height: undefined,
+  });
 
-    useEffect(() => {
-      function handleResize() {
-        setWindowSize({
-          width: window.innerWidth
-        });
-      }
+  useEffect(() => {
+    function handleResize() {
+      setWindowSize({
+        width: window.innerWidth
+      });
+    }
 
-      window.addEventListener("resize", handleResize);
+    window.addEventListener("resize", handleResize);
 
-      handleResize();
-
-
-      return () => window.removeEventListener("resize", handleResize);
-    }, []);
+    handleResize();
 
 
-
-    return (
-      <>
-        <Head>
-          <title>JAWN Coffee</title>
-          <meta name="description" content="Your favorite mobile coffee business " />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
-        <main>
-          <Section>
-            <HomeCard />
-          </Section>
-
-          <Section>
-            <About size={windowSize.width} />
-          </Section>
-
-          <Section>
-            <Coffee />
-          </Section>
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
 
-          <Section>
-            <Merch />
-          </Section>
 
-          <Section>
-            <Booking />
-          </Section>
+  return (
+    <>
+      <Head>
+        <title>JAWN Coffee</title>
+        <meta name="description" content="Your favorite mobile coffee business " />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <main>
+        <div><Toaster /></div>
+        <Section>
+          <HomeCard />
+        </Section>
 
-        </main>
-      </>
-    )
-  }
+        <Section>
+          <About size={windowSize.width} />
+        </Section>
+
+        <Section>
+          <Coffee />
+        </Section>
+
+
+        <Section>
+          <Merch />
+        </Section>
+
+        <Section>
+          <Booking />
+        </Section>
+
+      </main>
+    </>
+  )
+}
