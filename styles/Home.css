@@ -1,5 +1,5 @@
 .homeCard {
-    height: 100vh;
+    height: 105vh;
 }
 
 /* .jumbotron {
@@ -34,8 +34,9 @@
 @media screen and (max-width: 480px) {
     .jumbotron {
         background-image: url(./images/vert4.jpg);
-        height: 98%;
+        height: 100%;
         width: 100%;
         background-position: center;
     }
+
 }

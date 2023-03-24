@@ -1,0 +1,27 @@
+.coffeePreview {
+    height: auto;
+    width: 40vw;
+    margin: 0;
+}
+
+.coffeeSection {
+    background-color: var(--primary-color);
+    height: 88vh;
+    align-content: center;
+}
+
+.moreInfoBtn {
+    background-color: #FCD3D1;
+    border-radius: 5px;
+}
+
+.coffeeHeader, .coffeeText, .moreInfoBtn {
+    margin: 20px;
+}
+
+
+@media screen and (max-width: 950px) {
+    .coffeePreview {
+        width: 90vw;
+    }
+}

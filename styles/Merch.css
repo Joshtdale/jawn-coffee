@@ -1,0 +1,10 @@
+.merchSection {
+    /* background-color: var(--secondary-color); */
+    color: var(--primary-color);
+    height: 80vh;
+    align-content: center;
+}
+
+.comingSoon {
+    font-size: 5vw;
+}

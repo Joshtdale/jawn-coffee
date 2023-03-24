@@ -1,0 +1,9 @@
+.footer {
+    background-color: var(--primary-color);
+}
+
+.insta, .email {
+    /* width: 3vw; */
+    min-width: 25px;
+    margin: 15px;
+}

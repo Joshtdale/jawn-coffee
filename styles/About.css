@@ -1,0 +1,23 @@
+.aboutSection {
+    /* height: 88vh; */
+    /* background-color: var(--secondary-color); */
+    color: var(--primary-color);
+}
+
+.aboutPic {
+    height: auto;
+    width: 30vw;
+    margin: 10px;
+}
+
+.aboutHeader, .aboutText {
+    margin: 25px;
+}
+
+
+
+@media screen and (max-width: 450px) {
+    .aboutPic {
+        width: 85vw;
+    }
+}
