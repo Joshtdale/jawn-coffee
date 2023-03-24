@@ -1,4 +1,5 @@
 import Navbar from './Navbar'
+import Footer from './Footer'
 import { useState } from 'react'
 
 
@@ -20,6 +21,7 @@ export default function Layout({ children }) {
                 <li><a className="nav-item" href="#booking">Booking</a></li>
             </ul>} */}
             <main>{children}</main>
+            <Footer />
         </>
     )
 }

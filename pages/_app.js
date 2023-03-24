@@ -1,5 +1,6 @@
 import '@/styles/globals.css'
 import '@/styles/navbar.css'
+import '@/styles/Footer.css'
 import '@/styles/Home.css'
 import '@/styles/coffee.css'
 import '@/styles/Merch.css'
