@@ -46,14 +46,22 @@ export function SpinnerComponent() {
     const progress = useMotionValue(0);
 
     return (
-        <div className="App">
-            <motion.div
-                initial={{ x: 0 }}
-                animate={{ x: 100 }}
-                style={{ x: progress }}
-                transition={{ duration: 1 }}
-            />
-            <Spinner progress={progress} />
+        <div className="row">
+            <div className="col">
+                <p className="formThanks">
+                    Thanks! We'll be in touch!
+                </p>
+            </div>
+            <div className="col">
+                <motion.div
+                    initial={{ x: 0 }}
+                    animate={{ x: 100 }}
+                    style={{ x: progress }}
+                    transition={{ duration: 1 }}
+                />
+                <Spinner progress={progress} />
+            </div>
+
         </div>
     );
 }
