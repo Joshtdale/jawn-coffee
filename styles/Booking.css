@@ -1,6 +1,7 @@
 .bookingSection {
     background-color: var(--primary-color);
     color: var(--third-color);
+    height: 80vh;
 }
 
 .formInputs {
@@ -8,4 +9,8 @@
     box-shadow: none;
     border: 1px solid var(--third-color);
     border-radius: 10px;
+}
+
+.bookingForm {
+    width: 50%;
 }
