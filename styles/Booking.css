@@ -4,6 +4,10 @@
     height: 80vh;
 }
 
+/* .bookingHeader {
+    color: var(--third-color);
+} */
+
 .formInputs {
     background-color: var(--secondary-color);
     box-shadow: none;
@@ -15,7 +19,7 @@
 }
 
 .bookingForm {
-    /* width: 50%; */
+    width: 80%;
     margin: 10px;
 }
 
