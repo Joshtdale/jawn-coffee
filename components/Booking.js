@@ -71,55 +71,79 @@ function Booking() {
                 {/* <button onClick={() => Setvalue(!value)}>click</button> */}
 
                 {!value && <form onSubmit={onSubmit} className='bookingForm'>
-                    <input
-                        className='formInputs'
-                        type='text'
-                        name='from_name'
-                        placeholder='Your name'
-                        value={toSend.from_name}
-                        onChange={handleChange}
-                    />
-                    <input
-                        className='formInputs'
-                        type='text'
-                        name='date'
-                        placeholder='Date'
-                        value={toSend.date}
-                        onChange={handleChange}
-                    />
-                    <input
+                    <div className="row">
+                        <div className="col d-flex justify-content-center">
+                            <input // name
+                                className='formInputs'
+                                type='text'
+                                name='from_name'
+                                placeholder='Your name'
+                                value={toSend.from_name}
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <div className="col d-flex justify-content-center">
+                            <input // email
+                                className='formInputs'
+                                type='text'
+                                name='reply_to'
+                                placeholder='Your email'
+                                value={toSend.reply_to}
+                                onChange={handleChange}
+                            />
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col d-flex justify-content-center">
+                            <input // date
+                                className='formInputs'
+                                type='text'
+                                name='date'
+                                placeholder='Date'
+                                value={toSend.date}
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <div className="col d-flex justify-content-center">
+                            <input // location
+                                className='formInputs'
+                                type='text'
+                                name='location'
+                                placeholder='Location of event'
+                                value={toSend.location}
+                                onChange={handleChange}
+                            />
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col d-flex justify-content-center">
+                            <input // message
+                                className='formInputs messageInput'
+                                type='text'
+                                name='message'
+                                placeholder='Your message'
+                                value={toSend.message}
+                                onChange={handleChange}
+                            />
+                        </div>
+                    </div>
+
+
+                    {/* <input // time
                         className='formInputs'
                         type='text'
                         name='time'
                         placeholder='Time'
                         value={toSend.time}
                         onChange={handleChange}
-                    />
-                    <input
-                        className='formInputs'
-                        type='text'
-                        name='location'
-                        placeholder='Location of event'
-                        value={toSend.location}
-                        onChange={handleChange}
-                    />
-                    <input
-                        className='formInputs'
-                        type='text'
-                        name='message'
-                        placeholder='Your message'
-                        value={toSend.message}
-                        onChange={handleChange}
-                    />
-                    <input
-                        className='formInputs'
-                        type='text'
-                        name='reply_to'
-                        placeholder='Your email'
-                        value={toSend.reply_to}
-                        onChange={handleChange}
-                    />
-                    <button type='submit'>Send</button>
+                    /> */}
+
+
+                    <div className="row">
+                        <div className="col d-flex justify-content-center">
+                            <button type='submit'>Send</button>
+                        </div>
+                    </div>
                 </form>}
 
 

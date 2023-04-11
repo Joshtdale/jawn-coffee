@@ -7,10 +7,23 @@
 .formInputs {
     background-color: var(--secondary-color);
     box-shadow: none;
-    border: 1px solid var(--third-color);
-    border-radius: 10px;
+    /* border: 1px solid var(--third-color); */
+    border: none;
+    /* border-radius: 4px; */
+    margin: 2px;
+    width: 100%;
 }
 
 .bookingForm {
-    width: 50%;
+    /* width: 50%; */
+    margin: 10px;
+}
+
+.messageInput {
+    height: 20vh;
+}
+
+.messageInput::placeholder {
+    position: absolute;
+    top: 5px;
 }
