@@ -122,7 +122,9 @@ function Booking() {
                     <button type='submit'>Send</button>
                 </form>}
 
+
             </div>
+            <button onClick={() => Setvalue(!value)} >test</button>
             {/* </div> */}
 
         </div>
