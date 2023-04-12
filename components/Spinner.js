@@ -48,9 +48,12 @@ export function SpinnerComponent() {
     return (
         <div className="row">
             <div className="col-5">
-                <p className="formThanks">
+                <motion.div
+                    initial={{ x: 0 }}
+                    animate={{ x: -100 }}
+                    className="formThanks">
                     Thanks! We'll be in touch!
-                </p>
+                </motion.div>
             </div>
             <div className="col-5">
                 <motion.div
