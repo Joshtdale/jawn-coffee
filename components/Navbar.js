@@ -156,6 +156,14 @@ export default function Navbar() {
                 style={navStyles}
                 className={navStyleVariable}
             >
+                <div style={canvasStyle}>
+                    <MenuButton
+                        isOpen={isOpen}
+                        whileHover={{ scale: 1.1 }}
+                        onClick={() => setOpen(!isOpen)}
+                        style={menuButtonStyle}
+                    />
+                </div>
                 <motion.a href="#home"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
@@ -178,14 +186,7 @@ export default function Navbar() {
                 <li><a className="nav-item" href="#coffee">Coffee</a></li>
                 <li><a className="nav-item" href="#booking">Booking</a></li>
             </ul>} */}
-                <div style={canvasStyle}>
-                    <MenuButton
-                        isOpen={isOpen}
-                        whileHover={{ scale: 1.1 }}
-                        onClick={() => setOpen(!isOpen)}
-                        style={menuButtonStyle}
-                    />
-                </div>
+
             </motion.nav>
             <AnimatePresence>
                 {isOpen && (

@@ -3,7 +3,12 @@
 }
 
 .insta, .email {
-    /* width: 3vw; */
+    width: 3vw;
     min-width: 25px;
     margin: 15px;
+}
+
+.footerLogo {
+    height: 9rem;
+    width: auto;
 }
