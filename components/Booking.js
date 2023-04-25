@@ -5,6 +5,7 @@ import axios from "axios";
 import { send } from 'emailjs-com';
 import { toast } from 'react-hot-toast';
 import { SpinnerComponent } from './Spinner';
+import { motion } from 'framer-motion';
 
 function Booking() {
 
@@ -66,11 +67,11 @@ function Booking() {
     return (
         <div className='container-fluid bookingSection'>
             <div className="row">
-                <div className="col">
+                {/* <div className="col">
                     <h1 className='bookingHeader'>
                         Test
                     </h1>
-                </div>
+                </div> */}
             </div>
             <div className='row' id='booking'>
                 {/* <div className="row"> */}
@@ -149,7 +150,13 @@ function Booking() {
 
                         <div className="row">
                             <div className="col d-flex justify-content-center">
-                                <button type='submit'>Send</button>
+                                <motion.button
+                                type='submit'
+                                whileHover={{scale: 1.1}}
+                                whileTap={{scale: 0.9}}
+                                >
+                                Send
+                                </motion.button>
                             </div>
                         </div>
                     </form>}

@@ -2,12 +2,28 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import logo from '../styles/images/logo.jpeg'
+import Booking from './Booking'
 
 function Footer() {
     return (
         <div className='container-fluid footer'>
             <div className="row">
-                <div className="col d-flex align-items-center">
+            <div className="col-3 d-flex">
+                    <motion.a href="#home"
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                    >
+                        <Image
+                            src={logo}
+                            className='footerLogo'
+                            alt="logo"
+                            width='auto'
+                            height='auto'
+                            priority='true'
+                        />
+                    </motion.a>
+                </div>
+                <div className="col-3 d-flex align-items-center">
                     <motion.a
                         className='insta'
                         href="https://www.instagram.com/jawncoffee/"
@@ -23,20 +39,8 @@ function Footer() {
                         <path d="M64 112c-8.8 0-16 7.2-16 16v22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64H448c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z"/>
                     </svg> */}
                 </div>
-                <div className="col d-flex justify-content-end">
-                    <motion.a href="#home"
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                    >
-                        <Image
-                            src={logo}
-                            className='logo'
-                            alt="logo"
-                            width='auto'
-                            height='auto'
-                            priority='true'
-                        />
-                    </motion.a>
+                <div className="col-6 d-flex align-items-center">
+                    <Booking />
                 </div>
             </div>
         </div>
