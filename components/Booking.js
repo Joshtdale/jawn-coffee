@@ -67,15 +67,18 @@ function Booking() {
     return (
         <div className='container-fluid bookingSection'>
             <div className="row">
-                {/* <div className="col">
+                <div className="col-12">
                     <h1 className='bookingHeader'>
-                        Test
+                        Booking
                     </h1>
-                </div> */}
+                </div>
+                <div className='col-12'>
+                    {!value ? (<p>Tell us a little about your event and we'll be in touch</p>) : (<p>Thanks! We'll be in touch!</p>)}
+                </div>
             </div>
             <div className='row' id='booking'>
                 {/* <div className="row"> */}
-                <div className="col d-flex justify-content-center align-items-center">
+                <div className="col">
                     {value && <SpinnerComponent />}
                     {/* <button onClick={() => Setvalue(!value)}>click</button> */}
 
@@ -163,7 +166,7 @@ function Booking() {
 
 
                 </div>
-                <button onClick={() => Setvalue(!value)} >test</button>
+                <button className="testBtn" onClick={() => Setvalue(!value)} >test</button>
                 {/* </div> */}
 
             </div>

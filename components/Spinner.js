@@ -13,8 +13,8 @@ export default function Spinner({ progress }) {
     return (
         <motion.svg
             xmlns="http://www.w3.org/2000/svg"
-            width="258"
-            height="258"
+            width="158"
+            height="158"
             viewBox="0 0 258 258"
         >
             {/* Check mark  */}
@@ -46,16 +46,16 @@ export function SpinnerComponent() {
     const progress = useMotionValue(0);
 
     return (
-        <div className="row">
-            <div className="col-5">
+        <div className="row d-flex justify-content-center">
+            {/* <div className="col-3">
                 <motion.div
-                    initial={{ x: 0 }}
-                    animate={{ x: -100 }}
+                    initial={{ x: -10 }}
+                    animate={{ x: 0 }}
                     className="formThanks">
                     Thanks! We'll be in touch!
                 </motion.div>
-            </div>
-            <div className="col-5">
+            </div> */}
+            <div className="col-3">
                 <motion.div
                     initial={{ x: 0 }}
                     animate={{ x: 100 }}
