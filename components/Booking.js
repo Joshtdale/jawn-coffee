@@ -78,7 +78,7 @@ function Booking() {
             </div>
             <div className='row' id='booking'>
                 {/* <div className="row"> */}
-                <div className="col">
+                <div className="col d-flex justify-content-center">
                     {value && <SpinnerComponent />}
                     {/* <button onClick={() => Setvalue(!value)}>click</button> */}
 
