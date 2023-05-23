@@ -11,6 +11,15 @@
 }
 
 .footerLogo {
-    height: 9rem;
+    height: 8rem;
     width: auto;
 }
+
+.FooterNav {
+    margin: 40px;
+    & a{
+        color: var(--third-color);
+        text-decoration: none;
+    }
+}
+

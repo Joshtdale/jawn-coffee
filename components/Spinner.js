@@ -13,8 +13,9 @@ export default function Spinner({ progress }) {
     return (
         <motion.svg
             xmlns="http://www.w3.org/2000/svg"
-            width="158"
-            height="158"
+            // width="258"
+            // height="258"
+            className='spinner'
             viewBox="0 0 258 258"
         >
             {/* Check mark  */}
@@ -55,7 +56,7 @@ export function SpinnerComponent() {
                     Thanks! We'll be in touch!
                 </motion.div>
             </div> */}
-            <div className="col-3">
+            <div className="col-3 d-flex justify-content-center">
                 <motion.div
                     initial={{ x: 0 }}
                     animate={{ x: 100 }}

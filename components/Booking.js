@@ -76,7 +76,7 @@ function Booking() {
                     {!value ? (<p>Tell us a little about your event and we'll be in touch</p>) : (<p>Thanks! We'll be in touch!</p>)}
                 </div>
             </div>
-            <div className='row' id='booking'>
+            <div className='row d-flex justify-content-center' id='booking'>
                 {/* <div className="row"> */}
                 <div className="col d-flex justify-content-center">
                     {value && <SpinnerComponent />}
@@ -154,7 +154,8 @@ function Booking() {
                         <div className="row">
                             <div className="col d-flex justify-content-center">
                                 <motion.button
-                                type='submit'
+                                // type='submit'
+                                onClick={() => Setvalue(!value)}
                                 whileHover={{scale: 1.1}}
                                 whileTap={{scale: 0.9}}
                                 >
@@ -166,7 +167,7 @@ function Booking() {
 
 
                 </div>
-                <button className="testBtn" onClick={() => Setvalue(!value)} >test</button>
+                {/* <button className="testBtn" onClick={() => Setvalue(!value)} >test</button> */}
                 {/* </div> */}
 
             </div>
