@@ -6,7 +6,7 @@ import logo from '../styles/images/logo.jpeg'
 import { MenuButton } from "./MenuButton";
 
 // for nav menu
-const links = [
+export const links = [
     { name: "About", to: "#about", id: 1 },
     { name: "Coffee", to: "#coffee", id: 2 },
     { name: "Merch/Vintage", to: "#merch", id: 3 },
@@ -47,7 +47,7 @@ const menuButtonStyle = {
 };
 
 /** this is to FPO generate 5 links for the nav **/
-const linkList = [{}, {}, {}, {}, {}];
+// const linkList = [{}, {}, {}, {}, {}];
 
 const navStyles = {
     display: "flex",
@@ -68,6 +68,26 @@ const navLinksWrapper = {
 };
 
 let navStyleVariable = 'transparentNav'
+
+export function NavMap() {
+    return (
+        <>
+            {links.map(({ name, to, id }) => (
+                <motion.a
+                key={id}
+                href={to}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                variants={itemVariants}
+                onClick={() => setOpen(false)}
+                >
+                    {name}
+                </motion.a>
+            ))}
+            </>
+
+    )
+}
 
 export default function Navbar() {
     const [clientWindowHeight, setClientWindowHeight] = useState("");
@@ -177,15 +197,6 @@ export default function Navbar() {
                         priority='true'
                     />
                 </motion.a>
-                {/* {isOpen && <ul
-                style={navLinksWrapper}
-                className='navLinks'
-            >
-
-                <li><a className="nav-item" href="#about">About</a></li>
-                <li><a className="nav-item" href="#coffee">Coffee</a></li>
-                <li><a className="nav-item" href="#booking">Booking</a></li>
-            </ul>} */}
 
             </motion.nav>
             <AnimatePresence>
@@ -212,6 +223,16 @@ export default function Navbar() {
                                 variants={sideVariants}
                             >
 
+                                {NavMap(links)}
+                                </motion.div>
+                                {/* <motion.div
+                                className="container"
+                                initial="closed"
+                                animate="open"
+                                exit="closed"
+                                variants={sideVariants}
+                            >
+
                                 {links.map(({ name, to, id }) => (
                                     <motion.a
                                         key={id}
@@ -224,7 +245,7 @@ export default function Navbar() {
                                         {name}
                                     </motion.a>
                                 ))}
-                            </motion.div>
+                            </motion.div> */}
                         </motion.aside>
                     </motion.div>
                 )}

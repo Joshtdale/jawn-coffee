@@ -93,9 +93,9 @@ export default function Home() {
           <Merch />
         </Section>
 
-        {/* <Section>
+        <Section>
           <Booking />
-        </Section> */}
+        </Section>
 
       </main>
     </>
