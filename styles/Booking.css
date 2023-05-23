@@ -1,7 +1,7 @@
 .bookingSection {
     background-color: var(--primary-color);
     color: var(--third-color);
-    /* height: 80vh; */
+    height: 60vh;
 }
 
 /* .bookingHeader {
@@ -19,7 +19,7 @@
 }
 
 .bookingForm {
-    width: 80%;
+    width: 45%;
     margin: 10px;
     min-width: 381px;
 }
@@ -31,4 +31,9 @@
 .messageInput::placeholder {
     position: absolute;
     top: 5px;
+}
+
+.testBtn{
+    background-color: #469DAF;
+    bottom: 0;
 }
