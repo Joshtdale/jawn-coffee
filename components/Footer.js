@@ -4,16 +4,17 @@ import Image from 'next/image'
 import logo from '../styles/images/logo.jpeg'
 import Booking from './Booking'
 import { NavMap, links } from './Navbar'
+import insta
 
 function Footer() {
     return (
         <div className='container-fluid footer'>
-            <div className="row">
+            <div className="row d-flex justify-content-center">
                 {/* <div className="col-6 d-flex align-items-center">
                     <Booking />
                 </div> */}
                 {/* <button onClick={console.log(links)}>click</button> */}
-                <div className="col-lg-4 col-sm-12 d-flex">
+                <div className="col-12 d-flex justify-content-center">
                     <motion.a href="#home"
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
@@ -28,11 +29,11 @@ function Footer() {
                         />
                     </motion.a>
                 </div>
-                <div
-                    className="FooterNav col-lg-4 col-sm-4"
-                >
+            </div>
+            <div className="row FooterNavRow">
+                {/* <div className="FooterNav col-12"> */}
                     {links.map(({ name, to, id }) => (
-                        <div className="col-3">
+                        <div className=" FooterNav col-sm-12 col-md-1">
                             <motion.a
                                 key={id}
                                 href={to}
@@ -45,7 +46,9 @@ function Footer() {
                             </motion.a>
                         </div>
                     ))}
-                </div>
+                {/* </div> */}
+            </div>
+            <div className="row">
                 <div className="col-lg-4 col-sm-4 mx-4 d-flex align-items-center">
                     <motion.a
                         className='insta'
@@ -63,6 +66,7 @@ function Footer() {
                     </svg>
                 </div>
             </div>
+
         </div>
     )
 }
