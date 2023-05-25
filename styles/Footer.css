@@ -1,13 +1,22 @@
 .footer {
     background-color: var(--primary-color);
-    height: 300px;
+    /* height: 300px; */
     padding: 20px;
 }
 
 .insta, .email {
-    width: 25px;
+    width: 35px;
     /* min-width: 25px; */
     margin: 15px;
+}
+
+.email {
+    width: 37.5px;
+    margin-right: .5px;
+}
+
+.insta{ 
+    margin-left: .5px;
 }
 
 .footerLogo {
@@ -39,4 +48,15 @@
         display: flex;
         justify-content: center;
     }
+}
+
+.cls-1, .cls-2 {
+    fill: none;
+    stroke: #000000;
+    stroke-linejoin: round;
+    stroke-width: 1.9px;
+}
+
+.cls-2 {
+    stroke-linecap: round;
 }
