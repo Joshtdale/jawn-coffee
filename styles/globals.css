@@ -6,13 +6,15 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: var(--primary-color);
+}
 
+#__next {
+  overflow-x: hidden !important;
 }
 
 
-
 main {
-  overflow-x: hidden;
   background-color: var(--secondary-color);
 }
 

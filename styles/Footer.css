@@ -1,12 +1,12 @@
 .footer {
     background-color: var(--primary-color);
-    height: 80vh;
+    height: 300px;
     padding: 20px;
 }
 
 .insta, .email {
-    width: 3vw;
-    min-width: 25px;
+    width: 25px;
+    /* min-width: 25px; */
     margin: 15px;
 }
 
@@ -17,9 +17,26 @@
 
 .FooterNav {
     margin: 40px;
+    /* display: flex;
+    justify-content: center; */
     & a{
         color: var(--third-color);
         text-decoration: none;
     }
 }
 
+.FooterNavRow {
+    display: flex;
+    justify-content: start;
+}
+
+@media screen and (min-width: 768px) {
+    .FooterNav {
+        display: flex;
+        justify-content: center;
+    }
+    .FooterNavRow {
+        display: flex;
+        justify-content: center;
+    }
+}
