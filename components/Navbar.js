@@ -163,6 +163,12 @@ export default function Navbar() {
         }
     }), [isOpen || !isOpen];
 
+    function OpenNavigation(){
+        setOpen(!isOpen)
+        if (navStyleVariable === 'transparentNav') {
+            navStyleVariable = 'navStyles'
+        }
+    }
 
     return (
         <>
@@ -180,7 +186,7 @@ export default function Navbar() {
                     <MenuButton
                         isOpen={isOpen}
                         whileHover={{ scale: 1.1 }}
-                        onClick={() => setOpen(!isOpen)}
+                        onClick={() => OpenNavigation()}
                         style={menuButtonStyle}
                     />
                 </div>
