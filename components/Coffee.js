@@ -26,17 +26,6 @@ function Coffee() {
                 bring out their unique flavors and aromas. We believe that this approach results 
                 in truly exceptional coffee that our customers love.
                 </p>
-                    
-                <a href="https://www.proudhoundcoffee.com/" target="_blank">
-                    <motion.button
-                        className='moreInfoBtn'
-                        whileHover={{scale: 1.1}}
-                        whileTap={{scale: 0.9}}
-                    >
-                    More Info
-                    </motion.button>
-                </a>
-
             </div>
         </div>
     )

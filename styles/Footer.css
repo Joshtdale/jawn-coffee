@@ -30,8 +30,13 @@
     justify-content: center; */
     & a{
         color: var(--third-color);
-        text-decoration: none;
+        text-decoration: none !important;
     }
+}
+
+.Atag {
+    color: var(--third-color);
+    text-decoration: none !important;
 }
 
 .FooterNavRow {

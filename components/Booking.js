@@ -152,14 +152,24 @@ function Booking() {
 
 
                         <div className="row">
+                        {/* <a href="https://www.proudhoundcoffee.com/" target="_blank">
+                    <motion.button
+                        className='SubmitBtn'
+                        whileHover={{scale: 1.1}}
+                        whileTap={{scale: 0.9}}
+                    >
+                    More Info
+                    </motion.button>
+                </a> */}
                             <div className="col d-flex justify-content-center">
                                 <motion.button
                                 // type='submit'
                                 onClick={() => Setvalue(!value)}
                                 whileHover={{scale: 1.1}}
                                 whileTap={{scale: 0.9}}
+                                className='SubmitBtn'
                                 >
-                                Send
+                                Send 
                                 </motion.button>
                             </div>
                         </div>
@@ -176,6 +186,7 @@ function Booking() {
 }
 
 export default Booking
+
 
 
 
