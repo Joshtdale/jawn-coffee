@@ -5,14 +5,19 @@ import JohnSteph from '../styles/images/vert2.jpeg'
 function Text() {
     return (
         <div className="col-lg-4 col-sm-12">
-            <h1 className='aboutHeader'>About us</h1>
+            <h1 className='aboutHeader'>Welcome to Jawn Coffee!</h1>
             <p className='aboutText'>
-            Welcome to JAWN Coffee, the mobile coffee cart business founded by John and Stephanie Cable  
-            in Lexington, KY. With nearly a decade of experience in the local coffee industry, we're 
-            passionate about crafting the perfect cup of coffee for your special event. From weddings 
-            to parties and more, we use only the finest ingredients and beans to ensure every drink is 
-            delicious. We pride ourselves on exceptional service and a warm, welcoming atmosphere. 
-            Contact us today to book us for your next event!
+                We are a coffee cart business founded in Lexington, KY, in 2022 by husband and wife team John Cable and Stephanie Leung. 
+                <br></br>
+                <br></br>
+                In 2020 we dreamed up the idea for our pop-up espresso bar as we saw local small businesses working together more collaboratively, sharing spaces & hosting pop-ups. We want to do our part to make specialty coffee more inclusive and accessible and to bring it to non-traditional spaces.  
+                <br></br>
+                <br></br>
+                We're dedicated to sourcing sweet, complex, and traceable coffees and are always mindful of sustainable practices in coffee production.
+                <br></br>
+                <br></br>
+                At Jawn, we believe coffee is more than just a drink, it's a way to connect with others and create meaningful experiences. Whether you're looking for coffee for a wedding, corporate event, meeting, conference, party, festival, market, or pop-up, we'd love to work with you! Contact us today to learn how we can help make your event unforgettable. 
+
             </p>
 
             {/* <a href="https://www.proudhoundcoffee.com/" target="_blank">
