@@ -10,6 +10,7 @@ import Merch from '@/components/Merch'
 import { useState, useEffect, useRef } from 'react'
 import { useInView } from 'framer-motion'
 import { Toaster } from 'react-hot-toast'
+import coffee from '../styles/images/coffee.jpeg'
 // import IsOpen from '@/components/Navbar'
 // import '@/styles/navbar.css'
 
@@ -64,6 +65,22 @@ export default function Home() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  let coffeeSection = {
+    id: 'coffee',
+    color: 'primary',
+    orientationLeft: true,
+    image: {
+      src: coffee,
+      alt: 'Coffee'
+    },
+    text: {
+      header: 'Our coffee',
+      value: 'We are committed to serving you the highest-quality coffee blends available. We partner with renowned coffee roasters from around the United States who share our passion for excellence. Our trusted partners carefully select their coffees from some of the best regions around the world, and then roast them to perfection to bring out their unique flavors and aromas. We believe that this approach results in truly exceptional coffee that our customers love.'
+    }
+
+
+  }
+
 
 
   return (
@@ -85,7 +102,7 @@ export default function Home() {
         </Section>
 
         <Section>
-          <Coffee />
+          <Coffee fields={coffeeSection} />
         </Section>
 
 
