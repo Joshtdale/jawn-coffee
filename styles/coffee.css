@@ -11,6 +11,13 @@
     padding: 20px;
 }
 
+.alternateSection {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    align-content: center;
+    padding: 20px;
+}
+
 .coffeeHeader, .coffeeText, .moreInfoBtn {
     margin: 20px;
 }

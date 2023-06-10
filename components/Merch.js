@@ -9,7 +9,7 @@ function Merch() {
                 </h1>
             </div>
             <div className="col-12">
-                <p className='comingSoon text-center'>Coming Soon!</p>
+                <p className='text-center'>At Jawn, we also combine our love of vintage clothing, sustainability, and a smaller footprint and will offer a unique, curated shopping experience at select pop-up events. Look for us offering cool vintage items and limited Jawn Coffee merch online and in person. </p>
             </div>
         </div>
     )
