@@ -11,6 +11,7 @@ import { useState, useEffect, useRef } from 'react'
 import { useInView } from 'framer-motion'
 import { Toaster } from 'react-hot-toast'
 import coffee from '../styles/images/coffee.jpeg'
+import merch from '../styles/images/merch.jpeg'
 // import IsOpen from '@/components/Navbar'
 // import '@/styles/navbar.css'
 
@@ -65,7 +66,7 @@ export default function Home() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  let coffeeSection = {
+  const coffeeSection = {
     id: 'coffee',
     color: 'primary',
     orientationLeft: true,
@@ -75,12 +76,29 @@ export default function Home() {
     },
     text: {
       header: 'Our coffee',
-      value: 'We are committed to serving you the highest-quality coffee blends available. We partner with renowned coffee roasters from around the United States who share our passion for excellence. Our trusted partners carefully select their coffees from some of the best regions around the world, and then roast them to perfection to bring out their unique flavors and aromas. We believe that this approach results in truly exceptional coffee that our customers love.'
+      value: `We're dedicated to serving you the highest quality coffee available and seeking out excellent local, regional, and national roasters. 
+      Our current partners and featured roasters are Proud Hound Coffee of Cincinnati, Ohio, and Manchester Coffee Co. of Lexington, KY. We also plan on serving Dayglow Coffee of Los Angeles, CA on rotation.`
+      
     }
+  };
 
+  const MerchSection = {
+    id: 'coffee',
+    color: 'secondary',
+    orientationLeft: false,
+    image: {
+      src: merch,
+      alt: 'Merch'
+    },
+    text: {
+      header: 'Vintage Clothing & Merch',
+      value: 'At Jawn, we also combine our love of vintage clothing, sustainability, and a smaller footprint and will offer a unique, curated shopping experience at select pop-up events. Look for us offering cool vintage items and limited Jawn Coffee merch online and in person. '
+    }
+  };
 
+  if (windowSize.width < 990) {
+    MerchSection.orientationLeft = true
   }
-
 
 
   return (
@@ -102,12 +120,12 @@ export default function Home() {
         </Section>
 
         <Section>
-          <Coffee fields={coffeeSection} />
+          <Coffee {...coffeeSection} />
         </Section>
 
 
         <Section>
-          <Merch />
+          <Coffee {...MerchSection} />
         </Section>
 
         <Section>
