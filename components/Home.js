@@ -1,10 +1,13 @@
 import React from 'react'
+import { FadeIn } from './FadeIn'
 
 function HomeCard() {
   return (
-    <div id='home' className='homeCard'>
-      <div className='jumbotron'></div>
-    </div>
+    <FadeIn>
+      <div id='home' className='homeCard'>
+        <div className='jumbotron'></div>
+      </div>
+    </FadeIn>
   )
 }
 

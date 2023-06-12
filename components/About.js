@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import JohnSteph from '../styles/images/vert2.jpeg'
+import { FadeIn } from './FadeIn'
 
 function Text() {
     return (
@@ -51,7 +52,6 @@ function Img() {
 function About(props) {
 
     let viewportWidth = props.size
-    // console.log("size from about section is ", props.size)
 
     function Order() {
         if (viewportWidth < 990) {
@@ -72,13 +72,12 @@ function About(props) {
     }
     Order()
 
-
     return (
-
-        <div className='row d-flex justify-content-center align-items-center aboutSection' id='about'>
-            <Order />
-        </div>
-
+        <FadeIn>
+            <div className='row d-flex justify-content-center align-items-center aboutSection' id='about'>
+                <Order />
+            </div>
+        </FadeIn>
     )
 }
 

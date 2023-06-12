@@ -1,6 +1,7 @@
 .bookingSection {
     background-color: var(--primary-color);
     color: var(--third-color);
+    padding: 20px;
     /* height: 60vh; */
 }
 
@@ -10,18 +11,21 @@
 
 .formInputs {
     background-color: var(--secondary-color);
-    box-shadow: none;
+    border: 0;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+    /* box-shadow: none; */
     /* border: 1px solid var(--third-color); */
     border: none;
-    /* border-radius: 4px; */
+    border-radius: 2px;
     margin: 2px;
     width: 100%;
 }
 
 .bookingForm {
-    width: 45%;
+    width: 35%;
     margin: 10px;
     min-width: 381px;
+    padding: 20px;
 }
 
 .SubmitBtn {
@@ -90,34 +94,34 @@
 
 
 .button-13 {
-  background-color: #fff;
-  border: 1px solid #d5d9d9;
-  border-radius: 8px;
-  box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
-  box-sizing: border-box;
-  color: #0f1111;
-  cursor: pointer;
-  display: inline-block;
-  font-family: "Amazon Ember",sans-serif;
-  font-size: 13px;
-  line-height: 29px;
-  padding: 0 10px 0 11px;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: middle;
-  width: 100px;
+    background-color: #fff;
+    border: 1px solid #d5d9d9;
+    border-radius: 8px;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    box-sizing: border-box;
+    color: #0f1111;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Amazon Ember", sans-serif;
+    font-size: 13px;
+    line-height: 29px;
+    padding: 0 10px 0 11px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    width: 100px;
 }
 
 .button-13:hover {
-  background-color: #f7fafa;
+    background-color: #f7fafa;
 }
 
 .button-13:focus {
-  border-color: #008296;
-  box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
-  outline: 0;
+    border-color: #008296;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    outline: 0;
 }
