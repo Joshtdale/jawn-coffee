@@ -69,27 +69,12 @@ const navLinksWrapper = {
 
 let navStyleVariable = 'transparentNav'
 
-export function NavMap() {
-    return (
-        <>
-            {links.map(({ name, to, id }) => (
-                <motion.a
-                key={id}
-                href={to}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                variants={itemVariants}
-                onClick={() => setOpen(false)}
-                >
-                    {name}
-                </motion.a>
-            ))}
-            </>
 
-    )
-}
+
+
 
 export default function Navbar() {
+    const [isOpen, setOpen] = useState(false);
     const [clientWindowHeight, setClientWindowHeight] = useState("");
 
 
@@ -125,8 +110,6 @@ export default function Navbar() {
             setHidden(true);
         }
     }
-
-    const [isOpen, setOpen] = useState(false);
 
     // open = isOpen
     // console.log(open)
@@ -229,7 +212,7 @@ export default function Navbar() {
                                 variants={sideVariants}
                             >
 
-                                {NavMap(links)}
+                                {NavMap()}
                                 </motion.div>
                                 {/* <motion.div
                                 className="container"
@@ -258,5 +241,26 @@ export default function Navbar() {
             </AnimatePresence>
         </>
     );
+
+
+function NavMap() {
+    return (
+        <>
+            {links.map(({ name, to, id }) => (
+                <motion.a
+                key={id}
+                href={to}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                variants={itemVariants}
+                onClick={() => setOpen(false)}
+                >
+                    {name}
+                </motion.a>
+            ))}
+        </>
+
+    )
 }
 
+}
