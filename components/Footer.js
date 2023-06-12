@@ -55,7 +55,7 @@ function Footer() {
 
                     <motion.a
                         className='email'
-                        href="https://www.instagram.com/jawncoffee/"
+                        href="mailto:jawncoffee.ky@gmail.com"
                         target="_blank"
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}

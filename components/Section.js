@@ -2,6 +2,7 @@ import React from 'react'
 import { useEffect } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
+import { FadeIn } from './FadeIn'
 
 const ImageCol = (image) => (
     <div className='col-lg-5 col-sm-12 d-flex justify-content-center align-items-center'>
@@ -36,7 +37,7 @@ const Text = ({ header, value }) => {
     );
 }
 
-function Coffee({ color, orientationLeft, id, image, text }) {
+function Section({ color, orientationLeft, id, image, text }) {
     let sectionColor = 'coffeeSection'
     if (color == 'primary') {
         sectionColor = 'coffeeSection'
@@ -44,20 +45,22 @@ function Coffee({ color, orientationLeft, id, image, text }) {
         sectionColor = 'alternateSection'
     }
     return (
-        <div className={`row d-flex justify-content-center align-items-center ${sectionColor}`} id={id}>
-            {orientationLeft ? (
-                <>
-                    <ImageCol {...image} />
-                    <Text {...text} />
-                </>
-            ) : (
-                <>
-                    <Text {...text} />
-                    <ImageCol {...image} />
-                </>
-            )}
-        </div>
+        <FadeIn>
+            <div className={`row d-flex justify-content-center align-items-center ${sectionColor}`} id={id}>
+                {orientationLeft ? (
+                    <>
+                        <ImageCol {...image} />
+                        <Text {...text} />
+                    </>
+                ) : (
+                    <>
+                        <Text {...text} />
+                        <ImageCol {...image} />
+                    </>
+                )}
+            </div>
+        </FadeIn>
     )
 }
 
-export default Coffee
+export default Section
