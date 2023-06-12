@@ -2,11 +2,13 @@
     /* height: 88vh; */
     /* background-color: var(--secondary-color); */
     color: var(--primary-color);
+    padding: 20px;
 }
 
 .aboutPic {
     height: auto;
     width: 30vw;
+    min-width: 300px;
     margin: 10px;
 }
 

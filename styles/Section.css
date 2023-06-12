@@ -5,17 +5,19 @@
     margin: 0;
 }
 
+.coffeeSection, .alternateSection {
+    align-content: center;
+    min-height: 500px;
+    padding: 20px;
+}
+
 .coffeeSection {
     background-color: var(--primary-color);
-    align-content: center;
-    padding: 20px;
 }
 
 .alternateSection {
     background-color: var(--secondary-color);
     color: var(--primary-color);
-    align-content: center;
-    padding: 20px;
 }
 
 .coffeeHeader, .coffeeText, .moreInfoBtn {
