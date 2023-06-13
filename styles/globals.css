@@ -19,9 +19,9 @@ main {
 }
 
 
-/* #booking, #about, #coffee, #merch {
-    scroll-margin-top: 12vh;
-} */
+#booking, #about, #coffee, #merch {
+    scroll-margin-top: 15vh;
+}
 
 /* Aside/Menu */
 
