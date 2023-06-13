@@ -27,8 +27,11 @@ function Footer() {
                 </div>
             </div>
             <div className="row FooterNavRow">
-                {links.map(({ name, to, id }) => (
-                    <div className=" FooterNav col-sm-12 col-md-1">
+                {links.map(({ name, to, id }, i) => (
+                    <div 
+                        key={i}
+                        className=" FooterNav col-sm-12 col-md-1"
+                    >
                         <motion.a
                             key={id}
                             href={to}

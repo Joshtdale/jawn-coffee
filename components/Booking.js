@@ -67,7 +67,7 @@ function Booking() {
 
     return (
         <FadeIn>
-            <div className='container-fluid bookingSection'>
+            <div className='container-fluid bookingSection' id='booking'>
                 <div className="row">
                     <div className="col-12 d-flex justify-content-center">
                         <h1 className='bookingHeader'>
@@ -78,9 +78,9 @@ function Booking() {
                         {!value ? (<p>Tell us a little about your event and we'll be in touch</p>) : (<p>Thanks! We'll be in touch!</p>)}
                     </div>
                 </div>
-                <div className='row d-flex justify-content-center' id='booking'>
-                    {/* <div className="row"> */}
-                    <div className="col d-flex justify-content-center">
+                <div className='row d-flex justify-content-center'>
+                    {/* <div className="bookingCard"> */}
+                    <div className="d-flex justify-content-center bookingCard">
                         {value && <SpinnerComponent />}
                         {/* <button onClick={() => Setvalue(!value)}>click</button> */}
 
@@ -178,9 +178,9 @@ function Booking() {
                         </form>}
 
 
-                    </div>
-                    {/* <button className="testBtn" onClick={() => Setvalue(!value)} >test</button> */}
                     {/* </div> */}
+                    {/* <button className="testBtn" onClick={() => Setvalue(!value)} >test</button> */}
+                    </div>
 
                 </div>
             </div>

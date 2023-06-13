@@ -13,13 +13,11 @@ import { Toaster } from 'react-hot-toast'
 import coffee from '../styles/images/coffee.jpeg'
 import merch from '../styles/images/merch.jpeg'
 import { FadeIn } from '@/components/FadeIn'
+import InstagramPosts from '@/hooks/InstagramPosts'
 // import IsOpen from '@/components/Navbar'
 // import '@/styles/navbar.css'
 
 const inter = Inter({ subsets: ['latin'] })
-
-
-
 
 
 // export function Section({ children }) { // fades in element when first in view
@@ -63,44 +61,43 @@ export default function Home() {
 
     handleResize();
 
-
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const coffeeSection = {
-    id: 'coffee',
-    color: 'primary',
-    orientationLeft: true,
-    image: {
-      src: coffee,
-      alt: 'Coffee'
+  let SectionArray = [
+    { // coffeeSection
+      id: 'coffee',
+      color: 'primary',
+      orientationLeft: true,
+      image: {
+        src: coffee,
+        alt: 'Coffee'
+      },
+      text: {
+        header: 'Our coffee',
+        value: `We're dedicated to serving you the highest quality coffee available and seeking out excellent local, regional, and national roasters. 
+        Our current partners and featured roasters are Proud Hound Coffee of Cincinnati, Ohio, and Manchester Coffee Co. of Lexington, KY. We also plan on serving Dayglow Coffee of Los Angeles, CA on rotation.`
+        
+      }
     },
-    text: {
-      header: 'Our coffee',
-      value: `We're dedicated to serving you the highest quality coffee available and seeking out excellent local, regional, and national roasters. 
-      Our current partners and featured roasters are Proud Hound Coffee of Cincinnati, Ohio, and Manchester Coffee Co. of Lexington, KY. We also plan on serving Dayglow Coffee of Los Angeles, CA on rotation.`
-      
+    { // MerchSection
+      id: 'merch',
+      color: 'secondary',
+      orientationLeft: false,
+      image: {
+        src: merch,
+        alt: 'Merch'
+      },
+      text: {
+        header: 'Vintage Clothing & Merch',
+        value: 'At Jawn, we also combine our love of vintage clothing, sustainability, and a smaller footprint and will offer a unique, curated shopping experience at select pop-up events. Look for us offering cool vintage items and limited Jawn Coffee merch online and in person. '
+      }
     }
-  };
-
-  const MerchSection = {
-    id: 'coffee',
-    color: 'secondary',
-    orientationLeft: false,
-    image: {
-      src: merch,
-      alt: 'Merch'
-    },
-    text: {
-      header: 'Vintage Clothing & Merch',
-      value: 'At Jawn, we also combine our love of vintage clothing, sustainability, and a smaller footprint and will offer a unique, curated shopping experience at select pop-up events. Look for us offering cool vintage items and limited Jawn Coffee merch online and in person. '
-    }
-  };
+  ];
 
   if (windowSize.width < 990) {
-    MerchSection.orientationLeft = true
+    SectionArray.forEach((element) => element.orientationLeft = true)
   }
-
 
   return (
     <>
@@ -115,8 +112,7 @@ export default function Home() {
         <div><Toaster /></div>
         <HomeCard />
         <About size={windowSize.width} />
-        <Section {...coffeeSection} />
-        <Section {...MerchSection} />
+        {SectionArray.map((element) => (<Section {...element}/>))}
         <Booking />
       </main>
     </>
