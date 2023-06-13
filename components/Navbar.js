@@ -153,6 +153,16 @@ export default function Navbar() {
         }
     }
 
+    function ScrollToNav() {
+        setOpen(false)
+        setTimeout(() => {setHidden(false);}, "800")
+        // console.log('test')
+        // setTimeout(() => {
+        //     console.log("Delayed for 1 second.");
+        //   }, "2000");
+        
+    };
+
     return (
         <>
             <motion.nav /** the variants object needs to be passed into the motion component **/
@@ -253,7 +263,7 @@ function NavMap() {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 variants={itemVariants}
-                onClick={() => setOpen(false)}
+                onClick={() => ScrollToNav()}
                 >
                     {name}
                 </motion.a>
