@@ -2,17 +2,25 @@
     height: auto;
     width: 40vw;
     max-width: 450px;
-    margin: 0;
+    box-shadow: 0 0 20px 7px rgba(0, 0, 0, 0.06);
 }
 
-.coffeeSection, .alternateSection {
+.imageContainer {
+    width: 45vw;
+    min-height: 300px;
+    max-width: 450px;
+}
+
+.coffeeSection,
+.alternateSection {
     align-content: center;
     min-height: 650px;
-    padding: 20px;
+    padding: 30px;
 }
 
 .coffeeSection {
     background-color: var(--primary-color);
+    padding-top: 50px;
 }
 
 .alternateSection {
@@ -20,10 +28,15 @@
     color: var(--primary-color);
 }
 
-.coffeeHeader, .coffeeText, .moreInfoBtn {
-    margin: 20px;
+.coffeeHeader {
+    text-align: center;
 }
 
+.coffeeHeader,
+.coffeeText,
+.moreInfoBtn {
+    margin: 20px;
+}
 
 @media screen and (max-width: 950px) {
     .coffeePreview {

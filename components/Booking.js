@@ -68,14 +68,14 @@ function Booking() {
     return (
         <FadeIn>
             <div className='container-fluid bookingSection' id='booking'>
-                <div className="row">
+                <div className="row BookingHeadRow">
                     <div className="col-12 d-flex justify-content-center">
                         <h1 className='bookingHeader'>
                             Booking
                         </h1>
                     </div>
                     <div className='col-12 d-flex justify-content-center'>
-                        {!value ? (<p>Tell us a little about your event and we'll be in touch</p>) : (<p>Thanks! We'll be in touch!</p>)}
+                        {!value ? (<p className='text-center'>Tell us a little about your event and we'll be in touch</p>) : (<p className='text-center'>Thanks! We'll be in touch!</p>)}
                     </div>
                 </div>
                 <div className='row d-flex justify-content-center'>
@@ -131,7 +131,7 @@ function Booking() {
                             </div>
                             <div className="row">
                                 <div className="col d-flex justify-content-center">
-                                    <input // message
+                                    <textarea // message
                                         className='formInputs messageInput'
                                         type='text'
                                         name='message'
@@ -179,8 +179,8 @@ function Booking() {
 
 
                     {/* </div> */}
-                    {/* <button className="testBtn" onClick={() => Setvalue(!value)} >test</button> */}
                     </div>
+                    {/* <button className="testBtn" onClick={() => Setvalue(!value)} >test</button> */}
 
                 </div>
             </div>
