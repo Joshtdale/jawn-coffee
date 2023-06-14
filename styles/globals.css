@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Nunito+Sans:wght@300&display=swap');
+
 :root {
   --primary-color: #469DAF;
   --secondary-color: #D6DCE0;
@@ -11,16 +13,24 @@ html {
 
 #__next {
   overflow-x: hidden !important;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
+h1 , aside{
+  font-family: 'Montserrat', sans-serif;
+}
 
 main {
   background-color: var(--secondary-color);
 }
 
 
-#booking, #about, #coffee, #merch {
+#merch {
     scroll-margin-top: 15vh;
+}
+
+#booking, #coffee, #about {
+  scroll-margin-top: 13vh;
 }
 
 /* Aside/Menu */
@@ -45,7 +55,6 @@ aside {
   color: #f9fafb;
   text-decoration: none;
   font-size: 1.75rem;
-  /* font-weight: 600; */
   display: block;
   margin: 20px;
 }
@@ -55,7 +64,6 @@ button {
   margin: 1.25rem;
   border: none;
   padding: 0.5rem 1rem;
-  /* background-color: #f9fafb; */
 }
 
 

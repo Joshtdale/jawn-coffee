@@ -44,6 +44,7 @@ function Img() {
                 alt="John & Stephanie"
                 width='auto'
                 height='auto'
+                priority={true}
             />
         </div>
     )

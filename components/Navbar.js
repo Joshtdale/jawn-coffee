@@ -215,7 +215,7 @@ export default function Navbar() {
                             }}
                         >
                             <motion.div
-                                className="container"
+                                className="container asideNav"
                                 initial="closed"
                                 animate="open"
                                 exit="closed"

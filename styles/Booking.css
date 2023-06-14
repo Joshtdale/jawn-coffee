@@ -2,15 +2,16 @@
     background-color: var(--primary-color);
     color: var(--third-color);
     padding: 20px;
-    /* height: 60vh; */
+}
+
+.BookingHeadRow{
+    min-height: 115px;
 }
 
 .formInputs {
     background-color: var(--primary-color);
+    outline: none;
     border: 0;
-    /* box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06); */
-    /* box-shadow: none; */
-    /* border: 0.2px solid var(--third-color); */
     border-bottom: 1px solid var(--third-color);
     background: transparent;
     border-radius: 2px;
@@ -19,17 +20,18 @@
 }
 
 .bookingCard {
-    /* background-color: #d6dce0ac; */
     background-color: var(--secondary-color);
     width: 35% !important;
+    min-height: 311px;
+    margin: 2px 2px 2px 2px;
     box-shadow: 0 0 20px 7px rgba(0, 0, 0, 0.06);
-    /* transform: translateX(-100%); */
 }
 
-.bookingForm, .bookingCard {
+.bookingForm,
+.bookingCard {
     width: 35%;
     margin: 10px;
-    min-width: 381px;
+    min-width: 361px;
     padding: 20px;
 }
 
@@ -39,21 +41,15 @@
     border-radius: 8px;
     width: 100px;
     margin: 10px;
-    /* box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16); */
+    margin-top: 45px;
+    color: var(--third-color);
+    text-decoration: none;
 }
 
 .messageInput {
-    height: 20vh;
-    padding-top: 0;
-}
-
-/* .messageInput::content {
-    opacity: 0.1;
-} */
-
-.messageInput::placeholder {
-    position: absolute;
-    top: 5px;
+    min-height: 50px;
+    resize: vertical;
+    overflow-y: auto;
 }
 
 .testBtn {

@@ -4,8 +4,9 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { FadeIn } from './FadeIn'
 
-const ImageCol = (image) => (
-    <div className='col-lg-5 col-sm-12 d-flex justify-content-center align-items-center'>
+const ImageCol = (image) => {
+    return (
+    <div className='col-lg-5 col-sm-12 d-flex justify-content-center align-items-center imageContainer'>
         <Image
             // src='https://cdn.shopify.com/s/files/1/0277/2618/4517/collections/Webp.net-gifmaker-2_960x960.gif?v=1648328799'
             src={image.src}
@@ -15,7 +16,7 @@ const ImageCol = (image) => (
             height='auto'
         />
     </div>
-);
+)};
 
 const Text = ({ header, value }) => {
     const paragraphs = value.split('\n').map((paragraph, index) => (
@@ -26,7 +27,7 @@ const Text = ({ header, value }) => {
         </React.Fragment>
     ));
     return (
-        <div className="col-lg-5 col-sm-12">
+        <div className="col-lg-5 col-sm-12 mt-3">
             <h1 className='coffeeHeader'>
                 {header}
             </h1>
