@@ -12,6 +12,7 @@ import Cups from '../styles/images/Cups.jpeg'
 import Espresso from '../styles/images/Espresso.jpeg'
 import Proudhound from '../styles/images/ProudhoundSign.jpeg'
 import InstagramPosts from '@/hooks/InstagramPosts'
+import favicon from '../public/favicon.ico'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -105,7 +106,7 @@ export default function Home() {
         <title>JAWN Coffee</title>
         <meta name="description" content="Your favorite mobile coffee business " />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" src={favicon} sizes="any" />
       </Head>
 
       <div><Toaster /></div>
