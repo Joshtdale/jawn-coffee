@@ -38,6 +38,10 @@
     margin: 20px;
 }
 
+.coffeeText {
+    margin-left: 35px;
+}
+
 @media screen and (max-width: 950px) {
     .coffeePreview {
         width: 90vw;
