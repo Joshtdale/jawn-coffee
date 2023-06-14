@@ -1,46 +1,20 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import { Inter } from '@next/font/google'
-import styles from '@/styles/Home.module.css'
 import HomeCard from '@/components/Home'
 import About from '@/components/About'
 import Section from '@/components/Section'
 import Booking from '@/components/Booking'
-import Merch from '@/components/Merch'
-import { useState, useEffect, useRef } from 'react'
-import { useInView } from 'framer-motion'
+import { useState, useEffect } from 'react'
 import { Toaster } from 'react-hot-toast'
 import coffee from '../styles/images/coffee.jpeg'
 import merch from '../styles/images/merch.jpeg'
-import { FadeIn } from '@/components/FadeIn'
+import Cups from '../styles/images/Cups.jpeg'
+import Espresso from '../styles/images/Espresso.jpeg'
+import Proudhound from '../styles/images/ProudhoundSign.jpeg'
 import InstagramPosts from '@/hooks/InstagramPosts'
-// import IsOpen from '@/components/Navbar'
-// import '@/styles/navbar.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
-
-// export function Section({ children }) { // fades in element when first in view
-//   const ref = useRef(null);
-//   const isInView = useInView(ref, { once: true });
-
-//   // console.log(children.type.name)
-
-
-//   return (
-//     <section ref={ref}>
-//       <span
-//         style={{
-//           transform: isInView ? "none" : "translateX(-200px)",
-//           opacity: isInView ? 1 : 0,
-//           transition: "all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.1s"
-//         }}
-//       >
-//         {children}
-//       </span>
-//     </section>
-//   );
-// }
 
 
 export default function Home() {
@@ -49,6 +23,29 @@ export default function Home() {
     width: undefined,
     height: undefined,
   });
+
+  const [images] = useState([
+    coffee,
+    Cups,
+    Proudhound,
+    Espresso
+  ]);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const changeImage = () => {
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      );
+    };
+
+    // Start the interval when the component mounts
+    const interval = setInterval(changeImage, 3000); // Change image every 3 seconds
+
+    // Clean up the interval when the component unmounts
+    return () => clearInterval(interval);
+  }, [images.length]);
+
 
   useEffect(() => {
     function handleResize() {
@@ -64,20 +61,23 @@ export default function Home() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+
+
   let SectionArray = [
     { // coffeeSection
       id: 'coffee',
       color: 'primary',
       orientationLeft: true,
       image: {
-        src: coffee,
-        alt: 'Coffee'
+        src: images[currentImageIndex],
+        alt: 'Coffee',
+        index: currentImageIndex
       },
       text: {
-        header: 'Our coffee',
+        header: 'Our Coffee',
         value: `We're dedicated to serving you the highest quality coffee available and seeking out excellent local, regional, and national roasters. 
         Our current partners and featured roasters are Proud Hound Coffee of Cincinnati, Ohio, and Manchester Coffee Co. of Lexington, KY. We also plan on serving Dayglow Coffee of Los Angeles, CA on rotation.`
-        
+
       }
     },
     { // MerchSection
@@ -97,7 +97,7 @@ export default function Home() {
 
   if (windowSize.width < 990) {
     SectionArray.forEach((element) => element.orientationLeft = true)
-  }
+  };
 
   return (
     <>
@@ -107,14 +107,13 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      
-      <main>
-        <div><Toaster /></div>
-        <HomeCard />
-        <About size={windowSize.width} />
-        {SectionArray.map((element) => (<Section {...element}/>))}
-        <Booking />
-      </main>
+
+      <div><Toaster /></div>
+      <HomeCard />
+      <About size={windowSize.width} />
+      {SectionArray.map((element, key) => (<Section key={key} {...element} />))}
+      <Booking />
     </>
   )
 }
+

@@ -1,8 +1,6 @@
 .aboutSection {
-    /* height: 88vh; */
-    /* background-color: var(--secondary-color); */
     color: var(--primary-color);
-    padding: 20px;
+    padding: 30px;
 }
 
 .aboutPic {
@@ -12,11 +10,13 @@
     margin: 10px;
 }
 
+.aboutHeader {
+    text-align: center;
+}
+
 .aboutHeader, .aboutText {
     margin: 25px;
 }
-
-
 
 @media screen and (max-width: 450px) {
     .aboutPic {
