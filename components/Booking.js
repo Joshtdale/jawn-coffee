@@ -13,7 +13,7 @@ function Booking() {
     const [toSend, setToSend] = useState({
         from_name: '',
         date: '',
-        time: '',
+        // time: '',
         location: '',
         message: '',
         reply_to: '',
@@ -24,8 +24,8 @@ function Booking() {
     const onSubmit = (e) => {
         e.preventDefault();
         if (toSend.from_name &&
-            toSend.date &&
-            toSend.time &&
+            // toSend.date &&
+            // toSend.time &&
             toSend.message &&
             toSend.reply_to.includes('@')
         ) {
@@ -33,28 +33,28 @@ function Booking() {
             setToSend({
                 from_name: '',
                 date: '',
-                time: '',
+                // time: '',
                 location: '',
                 message: '',
                 reply_to: ''
             })
             Setvalue(!value)
-            toast.success('Message sent Successfully! \n We\'ll be in touch!')
-            // send(
-            //     'service_mdnlqle',
-            //     'template_vqplc4i',
-            //     toSend,
-            //     'DD7WQ4aW4Zl66jFJ7'
-            // )
-            //     .then((response) => {
-            //         // console.log('SUCCESS!', response.status, response.text);
-            //         toast.success('Message sent Successfully! \n We\'ll be in touch!')
-            //         Setvalue(!value)
-            //     })
-            //     .catch((err) => {
-            //         // console.log('FAILED...', err);
-            //         toast.error("Message failed to send. Please try again")
-            //     });
+            // toast.success('Message sent Successfully! \n We\'ll be in touch!')
+            send(
+                'service_mdnlqle',
+                'template_vqplc4i',
+                toSend,
+                'DD7WQ4aW4Zl66jFJ7'
+            )
+                .then((response) => {
+                    // console.log('SUCCESS!', response.status, response.text);
+                    toast.success('Message sent Successfully! \n We\'ll be in touch!')
+                    Setvalue(!value)
+                })
+                .catch((err) => {
+                    // console.log('FAILED...', err);
+                    toast.error("Message failed to send. Please try again")
+                });
         } else {
             toast.error("Please fill out all the required fields")
         }
@@ -79,10 +79,8 @@ function Booking() {
                     </div>
                 </div>
                 <div className='row d-flex justify-content-center'>
-                    {/* <div className="bookingCard"> */}
                     <div className="d-flex justify-content-center bookingCard">
                         {value && <SpinnerComponent />}
-                        {/* <button onClick={() => Setvalue(!value)}>click</button> */}
 
                         {!value && <form onSubmit={onSubmit} className='bookingForm'>
                             <div className="row">
@@ -154,34 +152,20 @@ function Booking() {
 
 
                             <div className="row">
-                            {/* <a href="https://www.proudhoundcoffee.com/" target="_blank">
-                        <motion.button
-                            className='SubmitBtn'
-                            whileHover={{scale: 1.1}}
-                            whileTap={{scale: 0.9}}
-                        >
-                        More Info
-                        </motion.button>
-                    </a> */}
                                 <div className="col d-flex justify-content-center">
                                     <motion.button
-                                    // type='submit'
-                                    onClick={() => Setvalue(!value)}
-                                    whileHover={{scale: 1.1}}
-                                    whileTap={{scale: 0.9}}
-                                    className='SubmitBtn'
+                                        type='submit'
+                                        // onClick={() => Setvalue(!value)}
+                                        whileHover={{ scale: 1.1 }}
+                                        whileTap={{ scale: 0.9 }}
+                                        className='SubmitBtn'
                                     >
-                                    Send 
+                                        Send
                                     </motion.button>
                                 </div>
                             </div>
                         </form>}
-
-
-                    {/* </div> */}
                     </div>
-                    {/* <button className="testBtn" onClick={() => Setvalue(!value)} >test</button> */}
-
                 </div>
             </div>
         </FadeIn>
