@@ -104,9 +104,9 @@ export default function Home() {
     <>
       <Head>
         <title>JAWN Coffee</title>
-        <meta name="description" content="Your favorite mobile coffee business " />
+        <meta name="description" content="Your favorite mobile coffee business" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" src={favicon} sizes="any" />
+        <link rel="icon" href={favicon} sizes="any" />
       </Head>
 
       <div><Toaster /></div>
