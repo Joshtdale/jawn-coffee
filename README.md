@@ -3,7 +3,8 @@ Welcome to the JAWN Coffee website, where we offer high-quality specialty coffee
 
 This project utilizes [Framer motion](https://www.framer.com/motion/) for complex animations and [Emailjs](https://medium.com/geekculture/how-to-send-emails-from-a-form-in-react-emailjs-6cdd21bb4190) to give potential clients the ability to send emails for business inquiries directly from the site. Screen recording below of UI.
 
-[Visit live site](https://joshtdale.github.io/jawn-coffee/)
+<!-- [Visit live site](https://joshtdale.github.io/jawn-coffee/) -->
+<a href="https://joshtdale.github.io/jawn-coffee/" target="_blank">Visit live site</a>
 
 Email form and Navbar animations with framer-motion
 
