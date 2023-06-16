@@ -6,4 +6,5 @@ This project utilizes [Framer motion](https://www.framer.com/motion/) for comple
 [Visit live site](https://joshtdale.github.io/jawn-coffee/)
 
 Email form animation with framer-motion
+
 <img src="https://github.com/Joshtdale/jawn-coffee/assets/111532201/aa67cbb7-f9de-4bf8-b1a4-208be3580cf3)" alt="Screen recording of email form animation" width="150"/>
