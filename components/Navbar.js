@@ -46,9 +46,6 @@ const menuButtonStyle = {
     marginLeft: "2rem"
 };
 
-/** this is to FPO generate 5 links for the nav **/
-// const linkList = [{}, {}, {}, {}, {}];
-
 const navStyles = {
     display: "flex",
     position: "fixed",
@@ -69,10 +66,6 @@ const navLinksWrapper = {
 
 let navStyleVariable = 'transparentNav'
 
-
-
-
-
 export default function Navbar() {
     const [isOpen, setOpen] = useState(false);
     const [clientWindowHeight, setClientWindowHeight] = useState("");
@@ -88,9 +81,7 @@ export default function Navbar() {
     };
 
     useEffect(() => {
-        // console.log(clientWindowHeight)
         if (clientWindowHeight > 500) {
-            // console.log('yuppp')
             navStyleVariable = 'navStyles'
         }
         if (clientWindowHeight < 300) {
@@ -110,10 +101,6 @@ export default function Navbar() {
             setHidden(true);
         }
     }
-
-    // open = isOpen
-    // console.log(open)
-    // props.setValue(isOpen)
 
     /** update the onChange callback to call for `update()` **/
     useEffect(() => {
@@ -156,11 +143,6 @@ export default function Navbar() {
     function ScrollToNav() {
         setOpen(false)
         setTimeout(() => {setHidden(false);}, "800")
-        // console.log('test')
-        // setTimeout(() => {
-        //     console.log("Delayed for 1 second.");
-        //   }, "2000");
-        
     };
 
     return (
@@ -221,30 +203,8 @@ export default function Navbar() {
                                 exit="closed"
                                 variants={sideVariants}
                             >
-
                                 {NavMap()}
-                                </motion.div>
-                                {/* <motion.div
-                                className="container"
-                                initial="closed"
-                                animate="open"
-                                exit="closed"
-                                variants={sideVariants}
-                            >
-
-                                {links.map(({ name, to, id }) => (
-                                    <motion.a
-                                        key={id}
-                                        href={to}
-                                        whileHover={{ scale: 1.1 }}
-                                        whileTap={{ scale: 0.9 }}
-                                        variants={itemVariants}
-                                        onClick={() => setOpen(false)}
-                                    >
-                                        {name}
-                                    </motion.a>
-                                ))}
-                            </motion.div> */}
+                            </motion.div>
                         </motion.aside>
                     </motion.div>
                 )}
@@ -258,12 +218,12 @@ function NavMap() {
         <>
             {links.map(({ name, to, id }) => (
                 <motion.a
-                key={id}
-                href={to}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                variants={itemVariants}
-                onClick={() => ScrollToNav()}
+                    key={id}
+                    href={to}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    variants={itemVariants}
+                    onClick={() => ScrollToNav()}
                 >
                     {name}
                 </motion.a>

@@ -8,7 +8,6 @@ const ImageCol = (image) => {
     return (
     <div className='col-lg-5 col-sm-12 d-flex justify-content-center align-items-center imageContainer'>
         <Image
-            // src='https://cdn.shopify.com/s/files/1/0277/2618/4517/collections/Webp.net-gifmaker-2_960x960.gif?v=1648328799'
             src={image.src}
             className='coffeePreview'
             alt={image.alt}
