@@ -1,7 +1,5 @@
 import React from 'react'
 import { useState } from 'react';
-import Head from "next/head";
-import axios from "axios";
 import { send } from 'emailjs-com';
 import { toast } from 'react-hot-toast';
 import { SpinnerComponent } from './Spinner';
@@ -64,7 +62,6 @@ function Booking() {
         setToSend({ ...toSend, [e.target.name]: e.target.value });
     };
 
-
     return (
         <FadeIn>
             <div className='container-fluid bookingSection' id='booking'>
@@ -75,7 +72,11 @@ function Booking() {
                         </h1>
                     </div>
                     <div className='col-12 d-flex justify-content-center'>
-                        {!value ? (<p className='text-center'>Tell us a little about your event and we'll be in touch</p>) : (<p className='text-center'>Thanks! We'll be in touch!</p>)}
+                        {!value ? (
+                        <p className='text-center'>Tell us a little about your event and we'll be in touch</p>
+                        ) : (
+                        <p className='text-center'>Thanks! We'll be in touch!</p>
+                        )}
                     </div>
                 </div>
                 <div className='row d-flex justify-content-center'>
@@ -140,22 +141,12 @@ function Booking() {
                                 </div>
                             </div>
 
-
-                            {/* <input // time
-                            className='formInputs'
-                            type='text'
-                            name='time'
-                            placeholder='Time'
-                            value={toSend.time}
-                            onChange={handleChange}
-                        /> */}
-
-
                             <div className="row">
                                 <div className="col d-flex justify-content-center">
                                     <motion.button
                                         type='submit'
                                         // onClick={() => Setvalue(!value)}
+                                        // For testing submit animation
                                         whileHover={{ scale: 1.1 }}
                                         whileTap={{ scale: 0.9 }}
                                         className='SubmitBtn'

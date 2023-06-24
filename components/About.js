@@ -20,17 +20,6 @@ function Text() {
                 At Jawn, we believe coffee is more than just a drink, it's a way to connect with others and create meaningful experiences. Whether you're looking for coffee for a wedding, corporate event, meeting, conference, party, festival, market, or pop-up, we'd love to work with you! Contact us today to learn how we can help make your event unforgettable. 
 
             </p>
-
-            {/* <a href="https://www.proudhoundcoffee.com/" target="_blank">
-                    <motion.button
-                        className='moreInfoBtn'
-                        whileHover={{scale: 1.1}}
-                        whileTap={{scale: 0.9}}
-                    >
-                    More Info
-                    </motion.button>
-                </a> */}
-
         </div>
     )
 }
