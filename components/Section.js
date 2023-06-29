@@ -1,26 +1,58 @@
-import React from 'react'
-import { useEffect } from 'react'
-import Image from 'next/image'
-import { motion } from 'framer-motion'
-import { FadeIn } from './FadeIn'
+import React from 'react';
+import { useEffect } from 'react';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { FadeIn } from './FadeIn';
+import BlockContent from '@sanity/block-content-to-react';
+import { SanityImage } from '@/hooks/SanityImage';
+import { urlFor } from '@/hooks/SanityImage';
 
-const ImageCol = (image) => {
-    return (
+const ImageCol = ({ images }) => { // Update the destructuring of the "images" prop
+    if (images){
+      console.log(urlFor(images[0].asset))
+      const imageUrl = urlFor(images[0]).url();
+  return (
     <div className='col-lg-5 col-sm-12 d-flex justify-content-center align-items-center imageContainer'>
-        <Image
-            src={image.src}
-            className='coffeePreview'
-            alt={image.alt}
-            width='auto'
-            height='auto'
-        />
+      <Image
+        src={imageUrl} // Call the SanityImage function with the correct argument
+        className='coffeePreview'
+        alt={images[0].alt}
+        width={1000}
+        height={1000}
+      />
     </div>
-)};
+  );
+    }
+};
 
-const Text = ({ header, value }) => {
-    const paragraphs = value.split('\n').map((paragraph, index) => (
+const serializers = {
+    types: {
+      // Customize rendering for block types here
+      // Example: Render a heading as an h1 element
+      heading: ({ node, children }) => <h1>{children}</h1>,
+    },
+    marks: {
+      // Customize rendering for mark types here
+      // Example: Render a bold mark as a <strong> element
+      strong: ({ children }) => <strong>{children}</strong>,
+    },
+  };
+  
+
+const Text = ({ header, body }) => {
+    if (body){
+    // console.log(body)
+    let children = body[0].children
+    // const paragraphs = value.split('\n').map((paragraph, index) => (
+    //     <React.Fragment key={index}>
+    //         {paragraph}
+    //         <br />
+    //         <br />
+    //     </React.Fragment>
+    // ));
+    const paragraphs = children.map((paragraph, index) => (
         <React.Fragment key={index}>
-            {paragraph}
+            {paragraph.text}
             <br />
             <br />
         </React.Fragment>
@@ -31,31 +63,42 @@ const Text = ({ header, value }) => {
                 {header}
             </h1>
             <p className='coffeeText'>
-                {paragraphs}
+                <BlockContent
+                    blocks={body}
+                    serializers={serializers}
+                    // imageOptions={{ w: 800, h: 600 }} // Adjust the image size options as needed
+                    // {...otherProps}
+                />
             </p>
         </div>
     );
+        }
 }
 
-function Section({ color, orientationLeft, id, image, text }) {
+function Section({ color, alignLeft, _key, images, text }) {
+    // console.log(images)
     let sectionColor = 'coffeeSection'
-    if (color == 'primary') {
+    if (color) {
         sectionColor = 'coffeeSection'
     } else {
         sectionColor = 'alternateSection'
     }
+    if (!images || images.length === 0) {
+        return null; // Return null if there are no images
+      }
+    
     return (
         <FadeIn>
-            <div className={`row d-flex justify-content-center align-items-center ${sectionColor}`} id={id}>
-                {orientationLeft ? (
+            <div className={`row d-flex justify-content-center align-items-center ${sectionColor}`} id={_key}>
+                {alignLeft ? (
                     <>
-                        <ImageCol {...image} />
+                        <ImageCol images={images} />
                         <Text {...text} />
                     </>
                 ) : (
                     <>
                         <Text {...text} />
-                        <ImageCol {...image} />
+                        <ImageCol images={images} />
                     </>
                 )}
             </div>

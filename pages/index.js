@@ -12,12 +12,29 @@ import Cups from '../styles/images/Cups.jpeg'
 import Espresso from '../styles/images/Espresso.jpeg'
 import Proudhound from '../styles/images/ProudhoundSign.jpeg'
 import InstagramPosts from '@/hooks/InstagramPosts'
+// import client from '@/hooks/SanityClient'
+import axios from 'axios'
+import { createClient } from "next-sanity";
+import { useSanity } from '@/hooks/SanityClient'
 
 const inter = Inter({ subsets: ['latin'] })
 
 
 
 export default function Home() {
+  const [data, setData] = useState()
+  const [sections, setSections] = useState([])
+  useEffect(() => {
+    const fetchData = async () => {
+      const query = `*[_type == 'page'] { ..., }[0]`;
+      const value = await useSanity(query);
+      setData(value);
+    };
+  
+    fetchData();
+  }, []);
+  // console.log(data);
+
 
   const [windowSize, setWindowSize] = useState({
     width: undefined,
@@ -32,19 +49,19 @@ export default function Home() {
   ]);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  useEffect(() => {
-    const changeImage = () => {
-      setCurrentImageIndex((prevIndex) =>
-        prevIndex === images.length - 1 ? 0 : prevIndex + 1
-      );
-    };
+  // useEffect(() => {
+  //   const changeImage = () => {
+  //     setCurrentImageIndex((prevIndex) =>
+  //       prevIndex === images.length - 1 ? 0 : prevIndex + 1
+  //     );
+  //   };
 
-    // Start the interval when the component mounts
-    const interval = setInterval(changeImage, 3000); // Change image every 3 seconds
+  //   // Start the interval when the component mounts
+  //   const interval = setInterval(changeImage, 3000); // Change image every 3 seconds
 
-    // Clean up the interval when the component unmounts
-    return () => clearInterval(interval);
-  }, [images.length]);
+  //   // Clean up the interval when the component unmounts
+  //   return () => clearInterval(interval);
+  // }, [images.length]);
 
 
   useEffect(() => {
@@ -59,14 +76,13 @@ export default function Home() {
     handleResize();
 
     return () => window.removeEventListener("resize", handleResize);
+    
   }, []);
-
-
 
   let SectionArray = [
     { // coffeeSection
       id: 'coffee',
-      color: 'primary',
+      color: true,
       orientationLeft: true,
       image: {
         src: images[currentImageIndex],
@@ -82,7 +98,7 @@ export default function Home() {
     },
     { // MerchSection
       id: 'merch',
-      color: 'secondary',
+      color: false,
       orientationLeft: false,
       image: {
         src: merch,
@@ -99,6 +115,15 @@ export default function Home() {
     SectionArray.forEach((element) => element.orientationLeft = true)
   };
 
+  useEffect(() => {
+    const filteredSections = data?.sections.filter((section) => 
+    section.title.toLowerCase() !== 'home' 
+    && section.title.toLowerCase() !== 'about')
+    setSections(filteredSections)
+
+  // console.log(filteredSections)
+  }, [data ?? 0]);
+// console.log(data ?? '')
   return (
     <>
       <Head>
@@ -111,7 +136,8 @@ export default function Home() {
       <div><Toaster /></div>
       <HomeCard />
       <About size={windowSize.width} />
-      {SectionArray.map((element, key) => (<Section key={key} {...element} />))}
+      {/* {SectionArray.map((element, key) => (<Section key={key} {...element} />))} */}
+      {data && sections?.map((element, key) => (<Section key={key} {...element} />))}
       <Booking />
     </>
   )
